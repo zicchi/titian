@@ -40,6 +40,11 @@ Route::group(['middleware' => ['admin']],function (){
 
         Route::group(['namespace' => 'Product', 'prefix' => 'products', 'as' => 'product::'], function() {
             Route::get('/',[ProductController::class,'index'])->name('index');
+            Route::get('/create',[ProductController::class,'create'])->name('create');
+            Route::post('/create',[ProductController::class,'store'])->name('store');
+            Route::get('/edit/{product}',[ProductController::class,'edit'])->name('edit');
+            Route::put('/edit/{product}',[ProductController::class,'update'])->name('update');
+            Route::delete('/delete/{product}',[ProductController::class,'destroy'])->name('destroy');
         });
 
         Route::group(['namespace' => 'Users', 'prefix' => 'users', 'as' => 'users::'], function() {

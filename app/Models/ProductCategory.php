@@ -14,4 +14,9 @@ class ProductCategory extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function product()
+    {
+        return $this->hasOne(Product::class,);
+    }
 }

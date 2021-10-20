@@ -15,42 +15,34 @@
         <div class="section-body">
             <div class="card">
                 <div class="card-header">
-                    <a href="#" class="btn btn-primary">Tambah Produk +</a>
+                    <a href="{{route('admin::product::create')}}" class="btn btn-primary">Tambah Produk +</a>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
                         <table class="table table-striped table-md">
                             <tr>
                                 <th>#</th>
-                                <th>Name</th>
-                                <th>Created At</th>
-                                <th>Status</th>
+                                <th>Nama</th>
+                                <th>Kategori</th>
+                                <th>Harga</th>
                                 <th>Action</th>
                             </tr>
+                            @foreach($products as $product)
                             <tr>
-                                <td>1</td>
-                                <td>Irwansyah Saputra</td>
-                                <td>2017-01-09</td>
-                                <td><div class="badge badge-success">Active</div></td>
+                                <td>{{$product->id}}</td>
+                                <td>{{$product->name}}</td>
+                                <td>{{$product->category->name}}</td>
+                                <td>Rp. {{number_format($product->price,2)}}</td>
                                 <td><a href="#" class="btn btn-info">Detail</a></td>
                             </tr>
+                            @endforeach
                         </table>
                     </div>
                 </div>
                 <div class="card-footer text-right">
                     <nav class="d-inline-block">
                         <ul class="pagination mb-0">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
-                            </li>
-                            <li class="page-item active"><a class="page-link" href="#">1 <span class="sr-only">(current)</span></a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
-                            </li>
+                           {{$products->links()}}
                         </ul>
                     </nav>
                 </div>
