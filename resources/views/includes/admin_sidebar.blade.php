@@ -13,7 +13,7 @@
                 <ul class="dropdown-menu">
                     <li class=""><a class="nav-link" href="{{route('admin::dashboard')}}"><span>Kategori Produk</span></a></li>
                     <li class=""><a class="nav-link" href="{{route('admin::dashboard')}}"><span>Bahan</span></a></li>
-                    <li class=""><a class="nav-link" href="{{route('admin::dashboard')}}"><span>Tag</span></a></li>
+                    <li class="{{request()->is('admin/tags*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::tags::index')}}"><span>Tag</span></a></li>
                     <li class=""><a class="nav-link" href="{{route('admin::dashboard')}}"><span>Kategori Blog</span></a></li>
                 </ul>
             </li>

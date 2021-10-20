@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -47,6 +48,15 @@ Route::group(['middleware' => ['admin']],function (){
             Route::get('/edit/{user}',[UserController::class,'edit'])->name('edit');
             Route::put('/edit/{user}',[UserController::class,'update'])->name('update');
             Route::delete('/delete/{user}',[UserController::class,'destroy'])->name('destroy');
+        });
+
+        Route::group(['namespace' => 'Tags', 'prefix' => 'tags', 'as' => 'tags::'], function() {
+            Route::get('/',[TagController::class,'index'])->name('index');
+            Route::get('/create',[TagController::class,'create'])->name('create');
+            Route::post('/create',[TagController::class,'store'])->name('store');
+            Route::get('/edit/{tag}',[TagController::class,'edit'])->name('edit');
+            Route::put('/edit/{tag}',[TagController::class,'update'])->name('update');
+            Route::delete('/delete/{tag}',[TagController::class,'destroy'])->name('destroy');
         });
     });
 });
