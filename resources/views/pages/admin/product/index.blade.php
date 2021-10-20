@@ -33,7 +33,14 @@
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->category->name}}</td>
                                 <td>Rp. {{number_format($product->price,2)}}</td>
-                                <td><a href="#" class="btn btn-info">Detail</a></td>
+                                <td>
+                                    <a href="{{route('admin::product::edit',[$product])}}" class="btn btn-info">Update</a>
+                                    <a href="javascript:" onclick="if(confirm('Anda yakin ingin menghapus item ini?')){$('#delete-item-{{$product->id}}').submit()};" class="btn btn-danger">Hapus</a>
+                                    <form action="{{ route('admin::product::destroy', [$product]) }}" method="post" class="hidden" id="delete-item-{{ $product->id }}">
+                                        @csrf
+                                        @method('delete')
+                                    </form>
+                                </td>
                             </tr>
                             @endforeach
                         </table>
