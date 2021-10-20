@@ -45,7 +45,7 @@
                 <div class="card-footer text-right">
                     <nav class="d-inline-block">
                         <ul class="pagination mb-0">
-
+                            {{$tags->links()}}
                         </ul>
                     </nav>
                 </div>
