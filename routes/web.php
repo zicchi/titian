@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
@@ -37,7 +38,7 @@ Route::group(['middleware' => ['admin']],function (){
 
         Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
 
-        Route::group(['namespace' => 'Product', 'prefix' => 'product', 'as' => 'product::'], function() {
+        Route::group(['namespace' => 'Product', 'prefix' => 'products', 'as' => 'product::'], function() {
             Route::get('/',[ProductController::class,'index'])->name('index');
         });
 
@@ -57,6 +58,15 @@ Route::group(['middleware' => ['admin']],function (){
             Route::get('/edit/{tag}',[TagController::class,'edit'])->name('edit');
             Route::put('/edit/{tag}',[TagController::class,'update'])->name('update');
             Route::delete('/delete/{tag}',[TagController::class,'destroy'])->name('destroy');
+        });
+
+        Route::group(['namespace' => 'Product Category', 'prefix' => 'product-category', 'as' => 'product-category::'], function() {
+            Route::get('/',[ProductCategoryController::class,'index'])->name('index');
+            Route::get('/create',[ProductCategoryController::class,'create'])->name('create');
+            Route::post('/create',[ProductCategoryController::class,'store'])->name('store');
+            Route::get('/edit/{category}',[ProductCategoryController::class,'edit'])->name('edit');
+            Route::put('/edit/{category}',[ProductCategoryController::class,'update'])->name('update');
+            Route::delete('/delete/{category}',[ProductCategoryController::class,'destroy'])->name('destroy');
         });
     });
 });
