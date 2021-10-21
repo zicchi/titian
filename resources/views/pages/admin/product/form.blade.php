@@ -53,18 +53,22 @@
                             <label for="">Tags</label>
                                 <div class="col-md-6">
                                     <div class="row">
-                                        @foreach($tags->chunk($tags->count() / 2) as $tagChunk)
-                                            <div class="col-md-6">
-                                                @foreach($tagChunk as $tag)
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input type="checkbox" class="form-check-input" name="tag[]" value="{{ $tag->id }}" {{ in_array($tag->id, $tag_ids) ? 'checked' : '' }} x-model="tags">
-                                                            {{ $tag->name }}
-                                                        </label>
-                                                    </div>
-                                                @endforeach
-                                            </div>
-                                        @endforeach
+                                        @if($tags->count())
+                                            @foreach($tags->chunk($tags->count() > 1 ? $tags->count() / 2 : $tags->count() / 1) as $tagChunk)
+                                                <div class="col-md-6">
+                                                    @foreach($tagChunk as $tag)
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" name="tag[]" value="{{ $tag->id }}" {{ in_array($tag->id, $tag_ids) ? 'checked' : '' }} x-model="tags">
+                                                                {{ $tag->name }}
+                                                            </label>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            @endforeach
+                                        @else
+                                            <label for="" class="">Buat data tag terlebih dahulu !</label>
+                                        @endif
                                     </div>
                                 </div>
                         </div>
