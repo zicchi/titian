@@ -8,7 +8,7 @@
         </div>
         <ul class="sidebar-menu">
             <li class="{{request()->is('admin/dashboard*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::dashboard')}}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown {{request()->is('admin/data*') ? 'active' : ''}}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Data Master</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{request()->is('admin/product-category*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::product-category::index')}}"><span>Kategori Produk</span></a></li>

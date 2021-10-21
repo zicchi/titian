@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(\route('login::index'));
 });
 
 Route::group(['namespace' => 'Login', 'prefix' => 'login', 'as' => 'product::'], function() {
@@ -56,22 +56,24 @@ Route::group(['middleware' => ['admin']],function (){
             Route::delete('/delete/{user}',[UserController::class,'destroy'])->name('destroy');
         });
 
-        Route::group(['namespace' => 'Tags', 'prefix' => 'tags', 'as' => 'tags::'], function() {
-            Route::get('/',[TagController::class,'index'])->name('index');
-            Route::get('/create',[TagController::class,'create'])->name('create');
-            Route::post('/create',[TagController::class,'store'])->name('store');
-            Route::get('/edit/{tag}',[TagController::class,'edit'])->name('edit');
-            Route::put('/edit/{tag}',[TagController::class,'update'])->name('update');
-            Route::delete('/delete/{tag}',[TagController::class,'destroy'])->name('destroy');
-        });
+        Route::group(['prefix' => 'data'],function (){
+            Route::group(['namespace' => 'Tags', 'prefix' => 'tags', 'as' => 'tags::'], function() {
+                Route::get('/',[TagController::class,'index'])->name('index');
+                Route::get('/create',[TagController::class,'create'])->name('create');
+                Route::post('/create',[TagController::class,'store'])->name('store');
+                Route::get('/edit/{tag}',[TagController::class,'edit'])->name('edit');
+                Route::put('/edit/{tag}',[TagController::class,'update'])->name('update');
+                Route::delete('/delete/{tag}',[TagController::class,'destroy'])->name('destroy');
+            });
 
-        Route::group(['namespace' => 'Product Category', 'prefix' => 'product-category', 'as' => 'product-category::'], function() {
-            Route::get('/',[ProductCategoryController::class,'index'])->name('index');
-            Route::get('/create',[ProductCategoryController::class,'create'])->name('create');
-            Route::post('/create',[ProductCategoryController::class,'store'])->name('store');
-            Route::get('/edit/{category}',[ProductCategoryController::class,'edit'])->name('edit');
-            Route::put('/edit/{category}',[ProductCategoryController::class,'update'])->name('update');
-            Route::delete('/delete/{category}',[ProductCategoryController::class,'destroy'])->name('destroy');
+            Route::group(['namespace' => 'Product Category', 'prefix' => 'product-category', 'as' => 'product-category::'], function() {
+                Route::get('/',[ProductCategoryController::class,'index'])->name('index');
+                Route::get('/create',[ProductCategoryController::class,'create'])->name('create');
+                Route::post('/create',[ProductCategoryController::class,'store'])->name('store');
+                Route::get('/edit/{category}',[ProductCategoryController::class,'edit'])->name('edit');
+                Route::put('/edit/{category}',[ProductCategoryController::class,'update'])->name('update');
+                Route::delete('/delete/{category}',[ProductCategoryController::class,'destroy'])->name('destroy');
+            });
         });
     });
 });
