@@ -17,7 +17,7 @@
                     <li class=""><a class="nav-link" href="{{route('admin::dashboard')}}"><span>Kategori Blog</span></a></li>
                 </ul>
             </li>
-            <li class="{{request()->is('admin/products*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::product::index')}}"><i class="fas fa-fire"></i> <span>Produk</span></a></li>
+            <li class="{{request()->is('admin/products*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::product::index')}}"><i class="fas fa-chair"></i> <span>Produk</span></a></li>
             @if(auth()->user()->role == 'superadmin')
                 <li class="{{request()->is('admin/users*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::users::index')}}"><i class="fas fa-user"></i> <span>User</span></a></li>
             @endif
