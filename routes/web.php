@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\MaterialController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\TagController;
@@ -64,6 +65,15 @@ Route::group(['middleware' => ['admin']],function (){
                 Route::get('/edit/{tag}',[TagController::class,'edit'])->name('edit');
                 Route::put('/edit/{tag}',[TagController::class,'update'])->name('update');
                 Route::delete('/delete/{tag}',[TagController::class,'destroy'])->name('destroy');
+            });
+
+            Route::group(['namespace' => 'Material', 'prefix' => 'materials', 'as' => 'materials::'], function() {
+                Route::get('/',[MaterialController::class,'index'])->name('index');
+                Route::get('/create',[MaterialController::class,'create'])->name('create');
+                Route::post('/create',[MaterialController::class,'store'])->name('store');
+                Route::get('/edit/{material}',[MaterialController::class,'edit'])->name('edit');
+                Route::put('/edit/{material}',[MaterialController::class,'update'])->name('update');
+                Route::delete('/delete/{material}',[MaterialController::class,'destroy'])->name('destroy');
             });
 
             Route::group(['namespace' => 'Product Category', 'prefix' => 'product-category', 'as' => 'product-category::'], function() {

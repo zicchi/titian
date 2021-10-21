@@ -12,7 +12,7 @@
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th-large"></i><span>Data Master</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{request()->is('admin/data/product-category*') ? 'dropdown active' : ''}}"><a class="nav-link" href="{{route('admin::product-category::index')}}"><span>Kategori Produk</span></a></li>
-                    <li class=""><a class="nav-link" href="{{route('admin::dashboard')}}"><span>Bahan</span></a></li>
+                    <li class="{{request()->is('admin/data/materials*') ? 'dropdown active' : ''}}"><a class="nav-link" href="{{route('admin::materials::index')}}"><span>Bahan</span></a></li>
                     <li class="{{request()->is('admin/data/tags*') ? 'dropdown active' : ''}}"><a class="nav-link" href="{{route('admin::tags::index')}}"><span>Tag</span></a></li>
                     <li class=""><a class="nav-link" href="{{route('admin::dashboard')}}"><span>Kategori Blog</span></a></li>
                 </ul>

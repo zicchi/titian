@@ -1,9 +1,9 @@
 @extends('layouts.main')
 @section('title')
-    @if($tag->id)
-        Edit {{$tag->name}}
+    @if($material->id)
+        Edit {{$material->name}}
     @else
-        Tambah Tag
+        Tambah Material
     @endif
 @endsection
 @section('content')
@@ -12,26 +12,26 @@
             <h1>@yield('title')</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{route('admin::dashboard')}}">Dashboard</a></div>
-                <div class="breadcrumb-item active"><a href="{{route('admin::tags::index')}}">Tag</a></div>
-                @if($tag->id)
-                    <div class="breadcrumb-item">Edit {{$tag->name}}</div>
+                <div class="breadcrumb-item active"><a href="{{route('admin::materials::index')}}">Material</a></div>
+                @if($material->id)
+                    <div class="breadcrumb-item">Edit {{$material->name}}</div>
                 @else
-                    <div class="breadcrumb-item">Tambah Tag</div>
+                    <div class="breadcrumb-item">Tambah Material</div>
                 @endif
             </div>
         </div>
 
         <div class="section-body">
             <div class="card">
-                <form method="post" action="{{$tag->id ? route('admin::tags::update',[$tag]) : route('admin::tags::store') }}">
+                <form method="post" action="{{$material->id ? route('admin::materials::update',[$material]) : route('admin::materials::store') }}">
                     @csrf
-                    @if($tag->id)
+                    @if($material->id)
                         @method('PUT')
                     @endif
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Nama Tag</label>
-                            <input type="text" class="form-control" name="name" required="" value="{{$tag->name}}">
+                            <label>Nama Material</label>
+                            <input type="text" class="form-control" name="name" required="" value="{{$material->name}}">
                         </div>
                     </div>
                     <div class="card-footer text-right">
