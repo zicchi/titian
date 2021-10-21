@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MaterialController;
 use App\Http\Controllers\Admin\ProductCategoryController;
@@ -83,6 +84,15 @@ Route::group(['middleware' => ['admin']],function (){
                 Route::get('/edit/{category}',[ProductCategoryController::class,'edit'])->name('edit');
                 Route::put('/edit/{category}',[ProductCategoryController::class,'update'])->name('update');
                 Route::delete('/delete/{category}',[ProductCategoryController::class,'destroy'])->name('destroy');
+            });
+
+            Route::group(['namespace' => 'Blog Category', 'prefix' => 'blog-category', 'as' => 'blog-category::'], function() {
+                Route::get('/',[BlogCategoryController::class,'index'])->name('index');
+                Route::get('/create',[BlogCategoryController::class,'create'])->name('create');
+                Route::post('/create',[BlogCategoryController::class,'store'])->name('store');
+                Route::get('/edit/{blog}',[BlogCategoryController::class,'edit'])->name('edit');
+                Route::put('/edit/{blog}',[BlogCategoryController::class,'update'])->name('update');
+                Route::delete('/delete/{blog}',[BlogCategoryController::class,'destroy'])->name('destroy');
             });
         });
     });

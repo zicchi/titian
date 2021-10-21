@@ -14,7 +14,7 @@
                     <li class="{{request()->is('admin/data/product-category*') ? 'dropdown active' : ''}}"><a class="nav-link" href="{{route('admin::product-category::index')}}"><span>Kategori Produk</span></a></li>
                     <li class="{{request()->is('admin/data/materials*') ? 'dropdown active' : ''}}"><a class="nav-link" href="{{route('admin::materials::index')}}"><span>Bahan</span></a></li>
                     <li class="{{request()->is('admin/data/tags*') ? 'dropdown active' : ''}}"><a class="nav-link" href="{{route('admin::tags::index')}}"><span>Tag</span></a></li>
-                    <li class=""><a class="nav-link" href="{{route('admin::dashboard')}}"><span>Kategori Blog</span></a></li>
+                    <li class="{{request()->is('admin/data/blog-category*') ? 'dropdown active' : ''}}"><a class="nav-link" href="{{route('admin::blog-category::index')}}"><span>Kategori Blog</span></a></li>
                 </ul>
             </li>
             <li class="{{request()->is('admin/products*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::product::index')}}"><i class="fas fa-chair"></i> <span>Produk</span></a></li>
