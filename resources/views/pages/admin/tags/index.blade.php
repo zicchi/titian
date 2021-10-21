@@ -28,7 +28,7 @@
                             @foreach($tags as $tag)
                                 <tr>
                                     <td>{{$tag->id}}</td>
-                                    <td>{{$tag->name}}</td>
+                                    <td><a href="{{route('admin::product::index',['tag' => $tag])}}">{{$tag->name}}</a></td>
                                     <td>
                                         <a href="{{route('admin::tags::edit',[$tag])}}" class="btn btn-info">Update</a>
                                         <a href="javascript:" onclick="if(confirm('Anda yakin ingin menghapus item ini?')){$('#delete-item-{{$tag->id}}').submit()};" class="btn btn-danger">Hapus</a>

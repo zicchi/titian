@@ -32,6 +32,7 @@
                                 <td>{{$product->id}}</td>
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->category->name}}</td>
+{{--                                <td>{{ $product->tags->pluck('name')->whenEmpty(function() { echo "-"; }, function($collection) { return $collection->join(', '); }) }}</td>--}}
                                 <td>Rp. {{number_format($product->price,2)}}</td>
                                 <td>
                                     <a href="{{route('admin::product::edit',[$product])}}" class="btn btn-info">Update</a>
@@ -49,7 +50,11 @@
                 <div class="card-footer text-right">
                     <nav class="d-inline-block">
                         <ul class="pagination mb-0">
-                           {{$products->links()}}
+                           {{
+                                $products->appends([
+                                    'tag' => request()->input('tag'),
+                                ])->links()
+                            }}
                         </ul>
                     </nav>
                 </div>

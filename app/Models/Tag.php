@@ -14,4 +14,9 @@ class Tag extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function products()
+    {
+        return $this->morphedByMany(Product::class,'taggable');
+    }
 }

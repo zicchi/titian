@@ -22,4 +22,9 @@ class Product extends Model
         return $this->belongsTo(ProductCategory::class,'product_category_id');
     }
 
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class,'taggable');
+    }
+
 }

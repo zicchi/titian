@@ -12,7 +12,7 @@
             <h1>@yield('title')</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{route('admin::dashboard')}}">Dashboard</a></div>
-                <div class="breadcrumb-item active"><a href="{{route('admin::product::index')}}">product</a></div>
+                <div class="breadcrumb-item active"><a href="{{route('admin::product::index')}}">Product</a></div>
                 @if($product->id)
                     <div class="breadcrumb-item">Edit {{$product->name}}</div>
                 @else
@@ -48,6 +48,25 @@
                         <div class="form-group">
                             <label for="description">Deskripsi Produk</label>
                             <textarea class="form-control" name="description" id="description" required="">{{$product->description}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tags</label>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        @foreach($tags->chunk($tags->count() / 2) as $tagChunk)
+                                            <div class="col-md-6">
+                                                @foreach($tagChunk as $tag)
+                                                    <div class="form-check">
+                                                        <label class="form-check-label">
+                                                            <input type="checkbox" class="form-check-input" name="tag[]" value="{{ $tag->id }}" {{ in_array($tag->id, $tag_ids) ? 'checked' : '' }} x-model="tags">
+                                                            {{ $tag->name }}
+                                                        </label>
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
                         </div>
 
                     </div>
