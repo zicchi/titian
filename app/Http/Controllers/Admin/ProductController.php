@@ -14,7 +14,7 @@ class ProductController extends Controller
     {
         $products = Product::when($request->filled('tag'),function ($q){
             $q->whereHas('tags',function ($q){
-                $q->where('id',\request()->input('tag'));
+                $q->where('name',\request()->input('tag'));
             });
         })->paginate(5);
         return view('pages.admin.product.index',[

@@ -43,7 +43,7 @@
                         </div>
                         <div class="form-group">
                             <label for="price">Harga</label>
-                            <input type="number" class="form-control" name="price" id="price" required="" value="{{$product->price}}">
+                            <input type="number" class="form-control" max="999999999" name="price" id="price" required="" value="{{$product->price}}">
                         </div>
                         <div class="form-group">
                             <label for="description">Deskripsi Produk</label>
