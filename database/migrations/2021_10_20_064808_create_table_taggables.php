@@ -16,7 +16,6 @@ class CreateTableTaggables extends Migration
         Schema::create('taggables', function (Blueprint $table) {
             $table->bigInteger('tag_id')->index();
             $table->morphs('taggable');
-            $table->timestamps();
         });
     }
 
@@ -27,6 +26,6 @@ class CreateTableTaggables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_taggables');
+        Schema::dropIfExists('taggables');
     }
 }
