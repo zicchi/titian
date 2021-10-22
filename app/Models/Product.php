@@ -27,4 +27,9 @@ class Product extends Model
         return $this->morphToMany(Tag::class,'taggable');
     }
 
+    public function materials()
+    {
+        return $this->morphToMany(Material::class,'manufacture');
+    }
+
 }

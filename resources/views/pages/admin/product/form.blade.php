@@ -60,8 +60,9 @@
                             <input type="file" name="image" dusk="image" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="">Tags</label>
+                            <div class="row">
                                 <div class="col-md-6">
+                                    <label for="">Tags</label>
                                     <div class="row">
                                         @if($tags->count())
                                             @foreach($tags->chunk($tags->count() > 1 ? $tags->count() / 2 : $tags->count() / 1) as $tagChunk)
@@ -69,7 +70,7 @@
                                                     @foreach($tagChunk as $tag)
                                                         <div class="form-check">
                                                             <label class="form-check-label">
-                                                                <input type="checkbox" class="form-check-input" name="tag[]" value="{{ $tag->id }}" {{ in_array($tag->id, $tag_ids) ? 'checked' : '' }} x-model="tags">
+                                                                <input type="checkbox" class="form-check-input" name="tag[]" value="{{ $tag->id }}" {{ in_array($tag->id, $tag_ids) ? 'checked' : '' }}>
                                                                 {{ $tag->name }}
                                                             </label>
                                                         </div>
@@ -81,6 +82,28 @@
                                         @endif
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <label for="">Bahan</label>
+                                    <div class="row">
+                                        @if($materials->count())
+                                            @foreach($materials->chunk($materials->count() > 1 ? $materials->count() / 2 : $materials->count() / 1) as $materialChunk)
+                                                <div class="col-md-6">
+                                                    @foreach($materialChunk as $material)
+                                                        <div class="form-check">
+                                                            <label class="form-check-label">
+                                                                <input type="checkbox" class="form-check-input" name="material[]" value="{{ $material->id }}" {{ in_array($material->id, $material_ids) ? 'checked' : '' }} >
+                                                                {{ $material->name }}
+                                                            </label>
+                                                        </div>
+                                                    @endforeach
+                                                </div>
+                                            @endforeach
+                                        @else
+                                            <label for="" class="">Buat data material terlebih dahulu !</label>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>

@@ -12,4 +12,9 @@ class Material extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function product()
+    {
+        return $this->morphedByMany(Product::class,'manufacture');
+    }
 }

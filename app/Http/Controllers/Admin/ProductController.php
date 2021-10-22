@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Material;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\Tag;
@@ -27,11 +28,14 @@ class ProductController extends Controller
         $tags = Tag::all();
         $categories = ProductCategory::get();
         $product = new Product();
+        $materials = Material::all();
         return view('pages.admin.product.form',[
             'product' => $product,
             'categories' => $categories,
             'tags' => $tags,
-            'tag_ids' => []
+            'tag_ids' => [],
+            'materials' => $materials,
+            'material_ids' => [],
         ]);
     }
 
@@ -54,6 +58,7 @@ class ProductController extends Controller
         $product->save();
 
         $product->tags()->sync($request->input('tag',[]));
+        $product->materials()->sync($request->input('material',[]));
 
         return redirect(route('admin::product::index'));
     }
@@ -62,12 +67,15 @@ class ProductController extends Controller
     {
         $categories = ProductCategory::get();
         $tags = Tag::all();
+        $materials = Material::all();
 
         return view('pages.admin.product.form',[
             'product' => $product,
             'categories' => $categories,
             'tags' => $tags,
-            'tag_ids' => $product->tags()->pluck('id')->toArray()
+            'tag_ids' => $product->tags()->pluck('id')->toArray(),
+            'materials' => $materials,
+            'material_ids' => $product->materials()->pluck('id')->toArray()
         ]);
     }
 
@@ -85,6 +93,7 @@ class ProductController extends Controller
         $product->save();
 
         $product->tags()->sync($request->input('tag',[]));
+        $product->materials()->sync($request->input('material',[]));
 
         return redirect(route('admin::product::index'));
     }
