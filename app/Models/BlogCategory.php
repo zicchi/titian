@@ -12,4 +12,9 @@ class BlogCategory extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function blog()
+    {
+        return $this->hasOne(Blog::class);
+    }
 }
