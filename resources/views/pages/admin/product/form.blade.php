@@ -23,7 +23,7 @@
 
         <div class="section-body">
             <div class="card">
-                <form method="post" action="{{$product->id ? route('admin::product::update',[$product]) : route('admin::product::store') }}">
+                <form method="post" action="{{$product->id ? route('admin::product::update',[$product]) : route('admin::product::store') }}" enctype="multipart/form-data">
                     @csrf
                     @if($product->id)
                         @method('PUT')
@@ -48,6 +48,16 @@
                         <div class="form-group">
                             <label for="description">Deskripsi Produk</label>
                             <textarea class="form-control" name="description" id="description" required="">{{$product->description}}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Gambar</label>
+                            @if($product->imageUrl)
+                                <div class="my-2">
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($product->imageUrl) }}"
+                                         alt="Gambar {{ $product->name }}" class="image-preview">
+                                </div>
+                            @endif
+                            <input type="file" name="image" dusk="image" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="">Tags</label>

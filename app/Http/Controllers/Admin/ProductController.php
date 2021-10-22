@@ -46,7 +46,11 @@ class ProductController extends Controller
         $product->name = $request->input('name');
         $product->price = $request->input('price');
         $product->description = $request->input('description');
-        $product->imageUrl = '';
+        if ($request->hasFile('image')) {
+            $product->imageUrl = $request->file('image')->store('public/images/products');
+        } else {
+            $product->imageUrl = "";
+        }
         $product->save();
 
         $product->tags()->sync($request->input('tag',[]));
@@ -73,7 +77,11 @@ class ProductController extends Controller
         $product->name = $request->input('name');
         $product->price = $request->input('price');
         $product->description = $request->input('description');
-        $product->imageUrl = '';
+        if ($request->hasFile('image')) {
+            $product->imageUrl = $request->file('image')->store('public/images/products');
+        } else {
+            $product->imageUrl = "";
+        }
         $product->save();
 
         $product->tags()->sync($request->input('tag',[]));
