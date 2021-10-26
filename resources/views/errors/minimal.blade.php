@@ -27,19 +27,6 @@
                         @yield('message')
                     </div>
                     <div class="page-search">
-                        <form>
-                            <div class="form-group floating-addon floating-addon-not-append">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text">
-                                            <i class="fas fa-search"></i>
-                                        </div>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="Search">
-
-                                </div>
-                            </div>
-                        </form>
                         <div class="mt-3">
                             <a href="{{route('admin::dashboard')}}">Back to Home</a>
                         </div>
