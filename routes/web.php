@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\MaterialController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
@@ -49,6 +50,13 @@ Route::group(['middleware' => ['admin']],function (){
             Route::get('/edit/{product}',[ProductController::class,'edit'])->name('edit');
             Route::put('/edit/{product}',[ProductController::class,'update'])->name('update');
             Route::delete('/delete/{product}',[ProductController::class,'destroy'])->name('destroy');
+        });
+
+        Route::group(['namespace' => 'Profile', 'prefix' => 'profile', 'as' => 'profile::'], function() {
+            Route::get('/',[ProfileController::class,'index'])->name('index');
+            Route::put('/',[ProfileController::class,'update'])->name('update');
+            Route::get('/changePassword',[ProfileController::class,'editPassword'])->name('edit-password');
+            Route::put('/changePassword',[ProfileController::class,'updatePassword'])->name('update-password');
         });
 
         Route::group(['namespace' => 'Users', 'prefix' => 'users', 'as' => 'users::'], function() {
