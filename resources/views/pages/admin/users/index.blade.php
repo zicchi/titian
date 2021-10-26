@@ -22,7 +22,6 @@
                         <div class="table-responsive">
                             <table class="table table-striped table-md">
                                 <tr>
-                                    <th>#</th>
                                     <th>Name</th>
                                     <th>Username</th>
                                     <th>Created At</th>
@@ -30,23 +29,22 @@
                                     <th>Action</th>
                                 </tr>
                                 @foreach($users as $user)
-                                    <tr>
-                                        <td>{{$user->id}}</td>
-                                        <td>{{$user->name}}</td>
-                                        <td>{{$user->username}}</td>
-                                        <td>{{$user->created_at}}</td>
-                                        <td>{{$user->role}}</td>
-                                        <td>
-                                            @if($user->role != 'superadmin')
+                                    @if($user->role != 'superadmin')
+                                        <tr>
+                                            <td>{{$user->name}}</td>
+                                            <td>{{$user->username}}</td>
+                                            <td>{{$user->created_at}}</td>
+                                            <td>{{$user->role}}</td>
+                                            <td>
                                                 <a href="{{route('admin::users::edit',[$user])}}" class="btn btn-info">Update</a>
                                                 <a href="javascript:;" onclick="if(confirm('Anda yakin ingin menghapus item ini?')){$('#delete-item-{{$user->id}}').submit()};" class="btn btn-danger">Hapus</a>
                                                 <form action="{{ route('admin::users::destroy', [$user]) }}" method="post" class="hidden" id="delete-item-{{ $user->id }}">
                                                     @csrf
                                                     @method('delete')
                                                 </form>
-                                            @endif
-                                        </td>
-                                    </tr>
+                                            </td>
+                                        </tr>
+                                    @endif
                                 @endforeach
                             </table>
                         </div>

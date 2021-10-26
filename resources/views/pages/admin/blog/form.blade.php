@@ -10,7 +10,7 @@
                 <div class="breadcrumb-item active"><a href="{{route('admin::dashboard')}}">Dashboard</a></div>
                 <div class="breadcrumb-item active"><a href="{{route('admin::blogs::index')}}">Blog</a></div>
                 @if($blog->id)
-                    <div class="breadcrumb-item">Edit {{$blog->name}}</div>
+                    <div class="breadcrumb-item">Edit {{$blog->title}}</div>
                 @else
                     <div class="breadcrumb-item">Tambah Blog</div>
                 @endif

@@ -25,6 +25,7 @@
                                 <th>Nama</th>
                                 <th>Kategori</th>
                                 <th>Deskripsi</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                             @foreach($blogs as $blog)
@@ -34,6 +35,13 @@
                                     <td>{{$blog->category->name}}</td>
                                     {{--                                <td>{{ $blog->tags->pluck('name')->whenEmpty(function() { echo "-"; }, function($collection) { return $collection->join(', '); }) }}</td>--}}
                                     <td>{{\Illuminate\Support\Str::limit($blog->description,30)}}</td>
+                                    <td>
+                                        @if($blog->published)
+                                            <span class="badge badge-success">Terpublikasi</span>
+                                        @else
+                                            <span class="badge badge-danger">Belum Terpublikasi</span>
+                                        @endif
+                                    </td>
                                     <td>
                                         <a href="{{route('admin::blogs::edit',[$blog])}}" class="btn btn-info">Update</a>
                                         <a href="javascript:" onclick="if(confirm('Anda yakin ingin menghapus item ini?')){$('#delete-item-{{$blog->id}}').submit()};" class="btn btn-danger">Hapus</a>

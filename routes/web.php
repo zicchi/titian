@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\MaterialController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductController;
@@ -66,6 +67,15 @@ Route::group(['middleware' => ['admin']],function (){
             Route::get('/edit/{blog}',[BlogController::class,'edit'])->name('edit');
             Route::put('/edit/{blog}',[BlogController::class,'update'])->name('update');
             Route::delete('/delete/{blog}',[BlogController::class,'destroy'])->name('destroy');
+        });
+
+        Route::group(['namespace' => 'Faqs', 'prefix' => 'faqs', 'as' => 'faqs::'], function() {
+            Route::get('/',[FaqController::class,'index'])->name('index');
+            Route::get('/create',[FaqController::class,'create'])->name('create');
+            Route::post('/create',[FaqController::class,'store'])->name('store');
+            Route::get('/edit/{faq}',[FaqController::class,'edit'])->name('edit');
+            Route::put('/edit/{faq}',[FaqController::class,'update'])->name('update');
+            Route::delete('/delete/{faq}',[FaqController::class,'destroy'])->name('destroy');
         });
 
         Route::group(['prefix' => 'data'],function (){
