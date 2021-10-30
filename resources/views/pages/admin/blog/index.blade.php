@@ -15,7 +15,7 @@
         <div class="section-body">
             <div class="card">
                 <div class="card-header">
-                    <a href="{{route('admin::blogs::create')}}" class="btn btn-primary">Tambah Produk +</a>
+                    <a href="{{route('admin::blogs::create')}}" class="btn btn-primary">Tambah Blog +</a>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
