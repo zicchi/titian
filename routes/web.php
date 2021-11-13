@@ -50,6 +50,7 @@ Route::group(['middleware' => ['admin']],function (){
             Route::get('/edit/{product}',[ProductController::class,'edit'])->name('edit');
             Route::put('/edit/{product}',[ProductController::class,'update'])->name('update');
             Route::delete('/delete/{product}',[ProductController::class,'destroy'])->name('destroy');
+            Route::get('/{product}',[ProductController::class,'show'])->name('show');
         });
 
         Route::group(['namespace' => 'Profile', 'prefix' => 'profile', 'as' => 'profile::'], function() {

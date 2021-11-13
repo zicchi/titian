@@ -35,8 +35,11 @@
 {{--                                <td>{{ $product->tags->pluck('name')->whenEmpty(function() { echo "-"; }, function($collection) { return $collection->join(', '); }) }}</td>--}}
                                 <td>Rp. {{number_format($product->price,2)}}</td>
                                 <td>
-                                    <a href="{{route('admin::product::edit',[$product])}}" class="btn btn-info">Update</a>
-                                    <a href="javascript:" onclick="if(confirm('Anda yakin ingin menghapus item ini?')){$('#delete-item-{{$product->id}}').submit()};" class="btn btn-danger">Hapus</a>
+                                    <div class="btn-group">
+                                        <a href="{{route('admin::product::show',[$product])}}" class="btn btn-info">Rincian</a>
+                                        <a href="{{route('admin::product::edit',[$product])}}" class="btn btn-success">Update</a>
+                                        <a href="javascript:" onclick="if(confirm('Anda yakin ingin menghapus item ini?')){$('#delete-item-{{$product->id}}').submit()};" class="btn btn-danger">Hapus</a>
+                                    </div>
                                     <form action="{{ route('admin::product::destroy', [$product]) }}" method="post" class="hidden" id="delete-item-{{ $product->id }}">
                                         @csrf
                                         @method('delete')

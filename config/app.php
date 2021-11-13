@@ -175,6 +175,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // For Resize Image
+        Intervention\Image\ImageServiceProvider::class
+
     ],
 
     /*
@@ -228,6 +231,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        // For Resize Image
+        'Image' => Intervention\Image\Facades\Image::class
+
 
     ],
 

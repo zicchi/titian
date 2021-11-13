@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Intervention\Image\Image;
 
 class ProductController extends Controller
 {
@@ -75,6 +76,18 @@ class ProductController extends Controller
             'tag_ids' => $product->tags()->pluck('id')->toArray(),
             'materials' => $materials,
             'material_ids' => $product->materials()->pluck('id')->toArray()
+        ]);
+    }
+
+    public function show(Product $product)
+    {
+        $categories = ProductCategory::get();
+
+        return view('pages.admin.product.show',[
+            'product' => $product,
+            'categories' => $categories,
+            'tag' => $product->tags()->pluck('id')->toArray(),
+            'material' => $product->materials()->pluck('id')->toArray()
         ]);
     }
 
