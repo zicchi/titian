@@ -27,6 +27,13 @@ class BlogController extends Controller
         ]);
     }
 
+    public function show(Blog $blog)
+    {
+        return view('pages.admin.blog.show',[
+            'blog' => $blog,
+        ]);
+    }
+
     public function store(Request $request)
     {
         $blog = new Blog();

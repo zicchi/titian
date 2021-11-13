@@ -76,6 +76,7 @@ Route::group(['middleware' => ['admin']],function (){
             Route::get('/edit/{blog}',[BlogController::class,'edit'])->name('edit');
             Route::put('/edit/{blog}',[BlogController::class,'update'])->name('update');
             Route::delete('/delete/{blog}',[BlogController::class,'destroy'])->name('destroy');
+            Route::get('/{blog}',[BlogController::class,'show'])->name('show');
         });
 
         Route::group(['namespace' => 'Faqs', 'prefix' => 'faqs', 'as' => 'faqs::'], function() {

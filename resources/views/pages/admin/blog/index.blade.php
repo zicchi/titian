@@ -43,8 +43,11 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{route('admin::blogs::edit',[$blog])}}" class="btn btn-info">Update</a>
-                                        <a href="javascript:" onclick="if(confirm('Anda yakin ingin menghapus item ini?')){$('#delete-item-{{$blog->id}}').submit()};" class="btn btn-danger">Hapus</a>
+                                        <div class="btn-group">
+                                            <a href="{{route('admin::blogs::show',[$blog])}}" class="btn btn-info">Rincian</a>
+                                            <a href="{{route('admin::blogs::edit',[$blog])}}" class="btn btn-success">Update</a>
+                                            <a href="javascript:" onclick="if(confirm('Anda yakin ingin menghapus item ini?')){$('#delete-item-{{$blog->id}}').submit()};" class="btn btn-danger">Hapus</a>
+                                        </div>
                                         <form action="{{ route('admin::blogs::destroy', [$blog]) }}" method="post" class="hidden" id="delete-item-{{ $blog->id }}">
                                             @csrf
                                             @method('delete')
