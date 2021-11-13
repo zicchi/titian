@@ -14,6 +14,15 @@
         </div>
 
         <div class="section-body">
+            @if (session('danger'))
+                <div class="alert alert-danger">
+                    {{session('danger')}}
+                </div>
+            @elseif(session('success'))
+                <div class="alert alert-success">
+                    {{session('success')}}
+                </div>
+            @endif
             <div class="card">
                 <form method="post" action="{{route('admin::profile::update-password')}}">
                     @csrf

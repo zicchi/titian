@@ -23,7 +23,7 @@ class LoginController extends Controller
         if ($auth){
             return redirect(route('admin::dashboard'));
         }else{
-            return redirect(route('login::index'))->with('failed','Username atau Password salah');
+            return redirect()->route('login::index')->with('danger','Username atau Password salah');
         }
     }
 
@@ -36,6 +36,6 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect(route('login::index'));
+        return redirect(route('login::index'))->with('success','Logout Sukses !');
     }
 }

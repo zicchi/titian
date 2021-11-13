@@ -10,12 +10,22 @@
                     <div class="login-brand">
                         <img src="../assets/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle">
                     </div>
+                    @if (session('danger'))
+                        <div class="alert alert-danger">
+                            {{session('danger')}}
+                        </div>
+                    @elseif(session('success'))
+                        <div class="alert alert-success">
+                            {{session('success')}}
+                        </div>
+                    @endif
 
                     <div class="card card-primary">
                         <div class="card-header"><h4>@yield('title')</h4></div>
 
                         <div class="card-body">
                             <form method="POST" action="{{route('login::login')}}" >
+
                                 @csrf
                                 <div class="form-group">
                                     <label for="username">Username</label>

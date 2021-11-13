@@ -16,6 +16,15 @@
             <p class="section-lead">
                 Change information about yourself on this page.
             </p>
+            @if (session('danger'))
+                <div class="alert alert-danger">
+                    {{session('danger')}}
+                </div>
+            @elseif(session('success'))
+                <div class="alert alert-success">
+                    {{session('success')}}
+                </div>
+            @endif
 
             <div class="row mt-sm-4">
                 <div class="col-12 col-md-12 col-lg-5">

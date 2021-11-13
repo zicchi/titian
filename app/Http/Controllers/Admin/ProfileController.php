@@ -23,7 +23,7 @@ class ProfileController extends Controller
         $user->email = $request->input('email');
         $user->save();
 
-        return redirect(route('admin::profile::index'));
+        return redirect(route('admin::profile::index'))->with('success','Update Berhasil !');
     }
 
     public function editPassword()
@@ -41,9 +41,9 @@ class ProfileController extends Controller
             $user->password = bcrypt($request->input('password'));
             $user->save();
 
-            return redirect(route('admin::profile::index'));
+            return redirect(route('admin::profile::index'))->with('success','Sukses ubah password');
 
         }
-        return redirect(route('admin::profile::edit-password'));
+        return redirect(route('admin::profile::edit-password'))->with('danger','Ubah password gagal, password tidak sama');
     }
 }

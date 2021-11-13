@@ -43,7 +43,6 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'tag' => 'required'
         ]);
         $product = new Product();
         $product->product_category_id = $request->input('category');
