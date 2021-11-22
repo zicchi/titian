@@ -1,15 +1,11 @@
 @extends('layouts.main')
 @section('title')
-    Tag
+Profile
 @endsection
 @section('content')
     <section class="section">
         <div class="section-header">
             <h1>Profile</h1>
-            <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                <div class="breadcrumb-item">Profile</div>
-            </div>
         </div>
         <div class="section-body">
             <h2 class="section-title">Hi, {{$user->name}}</h2>
@@ -30,7 +26,7 @@
                 <div class="col-12 col-md-12 col-lg-5">
                     <div class="card profile-widget">
                         <div class="profile-widget-header">
-                            <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle profile-widget-picture">
+                            <img alt="image" src="{{$user->imageUrl != '' ? \Illuminate\Support\Facades\Storage::url($user->imageUrl) : asset('assets/img/avatar/avatar-1.png')}}" class="rounded-circle profile-widget-picture">
                             <div class="profile-widget-items">
                                 <div class="profile-widget-item">
                                     <div class="profile-widget-item-label">Username</div>
@@ -54,7 +50,7 @@
                 </div>
                 <div class="col-12 col-md-12 col-lg-7">
                     <div class="card">
-                        <form method="post" action="{{route('admin::profile::update')}}">
+                        <form method="post" action="{{route('admin::profile::update')}}" enctype="multipart/form-data">
                             @csrf
                             @method('put')
                             <div class="card-header">
@@ -77,6 +73,16 @@
                                         <label>Email</label>
                                         <input type="email" name="email" class="form-control" value="{{$user->email}}" required="">
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Foto Profil</label>
+                                    @if($user->imageUrl)
+                                        <div class="my-2">
+                                            <img src="{{ \Illuminate\Support\Facades\Storage::url($user->imageUrl) }}"
+                                                 alt="Gambar {{ $user->name }}" class="image-preview">
+                                        </div>
+                                    @endif
+                                    <input type="file" name="image" dusk="image" class="form-control">
                                 </div>
                             </div>
                             <div class="card-footer text-right">

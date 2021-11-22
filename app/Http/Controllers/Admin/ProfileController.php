@@ -21,6 +21,11 @@ class ProfileController extends Controller
         $user->name = $request->input('name');
         $user->username = $request->input('username');
         $user->email = $request->input('email');
+        if ($request->hasFile('image')) {
+            $user->imageUrl = $request->file('image')->store('public/images/user/'.$user->name);
+        } else {
+            $user->imageUrl = "";
+        }
         $user->save();
 
         return redirect(route('admin::profile::index'))->with('success','Update Berhasil !');
