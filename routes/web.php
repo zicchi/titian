@@ -11,6 +11,15 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Livewire\AboutComponent;
+use App\Http\Livewire\BlogComponent;
+use App\Http\Livewire\ContactComponent;
+use App\Http\Livewire\DetailsComponent;
+use App\Http\Livewire\FAQComponent;
+use App\Http\Livewire\GalleryComponent;
+use App\Http\Livewire\HomeComponent;
+use App\Http\Livewire\ShopComponent;
+use App\Models\BlogCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,7 +33,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', HomeComponent::class);
+
+Route::get('/shop', ShopComponent::class);
+
+Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
+
+Route::get('/about', AboutComponent::class);
+
+Route::get('/gallery', GalleryComponent::class);
+
+Route::get('/blog', BlogComponent::class);
+
+Route::get('/faq', FAQComponent::class);
+
+Route::get('/contact', ContactComponent::class);
+
+Route::get('/login', function () {
     return redirect(\route('login::index'));
 });
 

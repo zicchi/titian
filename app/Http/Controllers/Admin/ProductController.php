@@ -47,6 +47,7 @@ class ProductController extends Controller
         ]);
         $product = new Product();
         $product->product_category_id = $request->input('category');
+        $product->slug = $request->input('slug');
         $product->name = $request->input('name');
         $product->price = $request->input('price');
         $product->description = $request->input('description');

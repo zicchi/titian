@@ -24,6 +24,7 @@
                                 <th>#</th>
                                 <th>Nama</th>
                                 <th>Kategori</th>
+                                <th>Slug</th>
                                 <th>Harga</th>
                                 <th>Action</th>
                             </tr>
@@ -32,6 +33,7 @@
                                 <td>{{$product->id}}</td>
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->category->name}}</td>
+                                <td>{{$product->slug}}</td>
 {{--                                <td>{{ $product->tags->pluck('name')->whenEmpty(function() { echo "-"; }, function($collection) { return $collection->join(', '); }) }}</td>--}}
                                 <td>Rp. {{number_format($product->price,2)}}</td>
                                 <td>
