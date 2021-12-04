@@ -38,6 +38,7 @@ class BlogController extends Controller
     {
         $blog = new Blog();
         $blog->title = $request->input('title');
+        $blog->slug = $request->input('slug');
         $blog->description = $request->input('description');
         $blog->published = $request->input('published',false);
         $blog->blog_category_id = $request->input('category');
@@ -66,6 +67,7 @@ class BlogController extends Controller
     {
         $blog->title = $request->input('title');
         $blog->description = $request->input('description');
+        $blog->slug = $request->input('slug');
         $blog->published = $request->input('published',false);
         $blog->blog_category_id = $request->input('category');
         $blog->user_id = auth()->user()->id;

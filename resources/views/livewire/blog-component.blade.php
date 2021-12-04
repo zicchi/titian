@@ -8,7 +8,7 @@
 
           <div class="col-sm-6 col-lg-4 mb-8" data-animate="fadeInUp">
             <div class="card border-0">
-              <a href="blog-post.html" class="hover-shine card-img-top">
+              <a href="{{ route('blog.details', ['slug'=>$blog->slug]) }}" class="hover-shine card-img-top">
                 <img src="{{ asset('assets/images/blog_01.jpg') }}"
                            alt="{{ $blog->title }}">
               </a>
@@ -17,10 +17,10 @@
                     {{ $blog->created_at }}
                 </p>
                 <h3 class="card-title mb-2 fs-20">
-                  <a href="blog-post.html">{{ $blog->title }}</a>
+                  <a href="{{ route('blog.details', ['slug'=>$blog->slug]) }}">{{ $blog->title }}</a>
                 </h3>
                 <p class="card-text mb-4 font-weight-500">{{ $blog->title }}</p>
-                <a href="blog-post.html"
+                <a href="{{ route('blog.details', ['slug'=>$blog->slug]) }}"
                          class="fs-14 font-weight-bold border-bottom border-light-dark text-uppercase letter-spacing-05 d-inline-block border-hover-primary">
                   Read more
                 </a>
@@ -28,7 +28,7 @@
             </div>
           </div>
 
-          @endforeach
+            @endforeach
         </div>
         <nav class="pt-2">
           <ul class="pagination justify-content-center align-items-center mb-0">

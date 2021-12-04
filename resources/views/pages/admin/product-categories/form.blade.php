@@ -23,7 +23,7 @@
 
         <div class="section-body">
             <div class="card">
-                <form method="post" action="{{$category->id ? route('admin::product-category::update',[$category]) : route('admin::product-category::store') }}">
+                <form method="post" action="{{$category->id ? route('admin::product-category::update',[$category]) : route('admin::product-category::store') }}" enctype="multipart/form-data">
                     @csrf
                     @if($category->id)
                         @method('PUT')
@@ -32,6 +32,20 @@
                         <div class="form-group">
                             <label>Nama Kategori Produk</label>
                             <input type="text" class="form-control" name="name" required="" value="{{$category->name}}">
+                        </div>
+                        <div class="form-group">
+                            <label>Nama Slug</label>
+                            <input type="text" class="form-control" name="slug" required="" value="{{$category->slug}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Gambar</label>
+                            @if($category->imageUrl)
+                                <div class="my-2">
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($category->imageUrl) }}"
+                                         alt="Gambar {{ $category->title }}" class="image-preview" width="400px" height="500px">
+                                </div>
+                            @endif
+                            <input type="file" name="image" dusk="image" class="form-control">
                         </div>
                     </div>
                     <div class="card-footer text-right">

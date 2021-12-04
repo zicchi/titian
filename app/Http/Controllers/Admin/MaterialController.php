@@ -28,6 +28,7 @@ class MaterialController extends Controller
     {
         $material = new Material();
         $material->name = $request->input('name');
+        $material->slug = $request->input('slug');
         $material->save();
 
         return redirect(route('admin::materials::index'));
@@ -43,6 +44,7 @@ class MaterialController extends Controller
     public function update(Request $request,Material $material)
     {
         $material->name = $request->input('name');
+        $material->slug = $request->input('slug');
         $material->save();
 
         return redirect(route('admin::materials::index'));

@@ -12,7 +12,7 @@ class Blog extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'title','description','user_id',
+        'title', 'slug','description','user_id',
         'blog_category_id','imageUrl',
     ];
 

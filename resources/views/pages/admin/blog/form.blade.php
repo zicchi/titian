@@ -30,6 +30,10 @@
                             <input type="text" class="form-control" name="title" required="" value="{{$blog->title}}">
                         </div>
                         <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" class="form-control" name="slug" required="" value="{{$blog->slug}}">
+                        </div>
+                        <div class="form-group">
                             <label for="category">Kategori Blog</label>
                             <select name="category" id="category" class="form-control">
                                 @foreach($categories as $category)

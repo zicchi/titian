@@ -11,6 +11,7 @@ class Material extends Model
 
     protected $fillable = [
         'name',
+        'slug',
     ];
 
     public function product()

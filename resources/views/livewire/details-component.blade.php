@@ -150,29 +150,6 @@
                   <option value="green">Green</option>
                 </select>
               </div>
-              <div class="row">
-                <div class="col-sm-6 mb-4 form-group">
-                  <label class="text-primary fs-16 font-weight-bold mb-3" for="size">Select a
-                    Size: </label>
-                  <select name="size" class="form-control w-100" required id="size">
-                    <option value="" selected>Choose an option</option>
-                    <option value="sm">SM</option>
-                    <option value="md">MD</option>
-                    <option value="lg">LG</option>
-                    <option value="xl">XL</option>
-                  </select>
-                </div>
-                <div class="col-sm-6 mb-4 form-group">
-                  <label class="text-primary fs-16 font-weight-bold mb-3" for="material">Material: </label>
-                  <select name="size" class="form-control w-100" required id="material">
-                    <option selected value="">Choose an option</option>
-                    <option value="sm">SM</option>
-                    <option value="md">MD</option>
-                    <option value="lg">LG</option>
-                    <option value="xl">XL</option>
-                  </select>
-                </div>
-              </div>
               <button type="submit" class="btn btn-primary btn-block mb-4">add to cart
               </button>
               <ul class="list-inline px-xl-8 mb-4 d-flex align-items-center justify-content-center">

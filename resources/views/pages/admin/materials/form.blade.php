@@ -33,6 +33,10 @@
                             <label>Nama Material</label>
                             <input type="text" class="form-control" name="name" required="" value="{{$material->name}}">
                         </div>
+                        <div class="form-group">
+                            <label>Nama Slug</label>
+                            <input type="text" class="form-control" name="slug" required="" value="{{$material->slug}}">
+                        </div>
                     </div>
                     <div class="card-footer text-right">
                         <button class="btn btn-primary">Submit</button>

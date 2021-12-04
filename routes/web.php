@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Livewire\AboutComponent;
 use App\Http\Livewire\BlogComponent;
+use App\Http\Livewire\BlogDetailsComponent;
+use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\ContactComponent;
 use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\FAQComponent;
@@ -39,11 +41,15 @@ Route::get('/shop', ShopComponent::class);
 
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 
+Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
+
 Route::get('/about', AboutComponent::class);
 
 Route::get('/gallery', GalleryComponent::class);
 
 Route::get('/blog', BlogComponent::class);
+
+Route::get('/blog/{slug}', BlogDetailsComponent::class)->name('blog.details');
 
 Route::get('/faq', FAQComponent::class);
 

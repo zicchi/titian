@@ -5,26 +5,26 @@
         </div>
       </section>
     <div class="pt-6">
-      <div class="container-fluid">
-        <div class="slick-slider"
-           data-slick-options='{"slidesToShow": 4, "autoplay":true,"dots":true,"arrows":false,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow":4}},{"breakpoint": 992,"settings": {"slidesToShow":3}},{"breakpoint": 768,"settings": {"slidesToShow": 2}},{"breakpoint": 576,"settings": {"slidesToShow": 1}}]}'>
-           @foreach ($categories as $category)
-          <div class="box" data-animate="fadeInUp">
-            <div class="card border-0">
-              <img src="{{ asset('assets/images/c_07.jpg')}}" alt="Chairs" class="card-img">
-              <div class="card-img-overlay d-inline-flex flex-column px-6 py-4">
-                  <h3 class="card-title fs-30">{{$category->name}}</h3>
-                <div class="mt-auto">
-                  <a href="{{ route('product.category', ['category_slug' => $category->slug]) }}"
-                             class="text-uppercase fs-14 letter-spacing-05 border-bottom border-light-dark border-hover-primary font-weight-bold">Shop
-                    Now</a>
+        <div class="container-fluid">
+            <div class="slick-slider"
+               data-slick-options='{"slidesToShow": 4, "autoplay":true,"dots":true,"arrows":false,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow":4}},{"breakpoint": 992,"settings": {"slidesToShow":3}},{"breakpoint": 768,"settings": {"slidesToShow": 2}},{"breakpoint": 576,"settings": {"slidesToShow": 1}}]}'>
+               @foreach ($categories as $category)
+              <div class="box" data-animate="fadeInUp">
+                <div class="card border-0">
+                  <img src="{{ asset('assets/images/c_07.jpg')}}" alt="Chairs" class="card-img">
+                  <div class="card-img-overlay d-inline-flex flex-column px-6 py-4">
+                      <h3 class="card-title fs-30">{{$category->name}}</h3>
+                    <div class="mt-auto">
+                      <a href="{{ route('product.category', ['category_slug' => $category->slug]) }}"
+                                 class="text-uppercase fs-14 letter-spacing-05 border-bottom border-light-dark border-hover-primary font-weight-bold">Shop
+                        Now</a>
+                    </div>
+                  </div>
                 </div>
               </div>
+              @endforeach
             </div>
           </div>
-          @endforeach
-        </div>
-      </div>
     </div>
     <section class="pt-13 pb-11 pb-lg-14">
       <div class="container">
@@ -45,6 +45,42 @@
                                      class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">{{ $category->name }}</a>
                     </li>
                     @endforeach
+                  </ul>
+                </div>
+              </div>
+              <div class="card border-0 mb-7">
+                <div class="card-header bg-transparent border-0 p-0">
+                  <h3 class="card-title fs-20 mb-0">
+                    Price
+                  </h3>
+                </div>
+                <div class="card-body px-0 pt-4 pb-0">
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-1">
+                      <a href="#"
+                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">All
+                      </a>
+                    </li>
+                    <li class="mb-1">
+                      <a href="#"
+                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">$10
+                        - $100</a>
+                    </li>
+                    <li class="mb-1">
+                      <a href="#"
+                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">$100
+                        - $200</a>
+                    </li>
+                    <li class="mb-1">
+                      <a href="#"
+                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">$200
+                        - $300</a>
+                    </li>
+                    <li class="mb-1">
+                      <a href="#"
+                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">$300
+                        - $400</a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -85,7 +121,7 @@
                   </ul>
                 </div>
               </div>
-              {{-- <div class="card border-0">
+              <div class="card border-0">
                 <div class="card-header bg-transparent border-0 p-0">
                   <h3 class="card-title fs-20 mb-0">
                     Tags
@@ -131,7 +167,7 @@
                     </li>
                   </ul>
                 </div>
-              </div> --}}
+              </div>
             </div>
           </div>
           <div class="col-md-9">
@@ -161,7 +197,7 @@
               <div class="col-sm-6 col-lg-4 mb-8" data-animate="fadeInUp">
                 <div class="card border-0 hover-change-content product">
                   <div class="card-img-top position-relative">
-                    <div style="background-image: url('{{ \Illuminate\Support\Facades\Storage::url($product->imageUrl) }} ')"
+                    <div style="background-image: url('{{ asset('assets/images/product-19.jpg')}}')"
                                    class="card-img ratio bg-img-cover-center ratio-1-1">
                     </div>
                   </div>

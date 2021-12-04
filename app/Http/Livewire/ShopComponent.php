@@ -3,15 +3,37 @@
 namespace App\Http\Livewire;
 
 use App\Models\Product;
+use App\Models\ProductCategory;
 use Livewire\Component;
 use Livewire\WithPagination;
 
 class ShopComponent extends Component
 {
 
+    public $sorting;
+    public $pageSize;
+
+    public function mount()
+    {
+        $this->sorting = "default";
+        $this->pageSize = "12";
+    }
+
     public function render()
     {
-        $products = Product::paginate(1);
-        return view('livewire.shop-component', ['products' => $products])->layout('layouts.base');
+        if ($this->sorting == "lowToHigh")
+        {
+            $products = Product::orderBy('price', 'DESC')->paginate($this->pageSize);
+        }
+        else if ($this->sorting == "highToLow")
+        {
+            $products = Product::orderBy('price', 'ASC')->paginate($this->pageSize);
+        }else {
+            $products = Product::paginate($this->pageSize);
+        }
+
+        $categories = ProductCategory::all();
+
+        return view('livewire.shop-component', ['products' => $products, 'categories' => $categories])->layout('layouts.base');
     }
 }

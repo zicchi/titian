@@ -15,9 +15,11 @@
     <link rel="stylesheet" href="{{ asset('assets/vendors/magnific-popup/magnific-popup.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/jquery-ui/jquery-ui.min.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/animate.css')}}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/mapbox-gl/mapbox-gl.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/mapbox-gl/mapbox-gl.min.css') }}">
     <!-- Themes core CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/themes.css')}}">
+    {{-- Custom CSS --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
     <!-- Favicons -->
     <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}">
     @livewireStyles()
@@ -73,7 +75,7 @@
                 <div class="d-flex align-items-center justify-content-end">
                   <a href="#search-popup" data-gtf-mfp="true"
                                data-mfp-options='{"type":"inline","focus": "#keyword","mainClass": "mfp-search-form mfp-move-from-top mfp-align-top"}'
-                               class="nav-search d-block py-0 pr-2') }}" title="Search"><i
+                               class="nav-search d-block py-0 pr-2'" title="Search"><i
                                     class="far fa-search"></i> Search</a>
                 </div>
               </div>
@@ -105,42 +107,26 @@
           <div class="col-md-6 col-lg-3 mb-6 mb-lg-0">
             <h3 class="fs-14 mb-3 text-uppercase letter-spacing-05">menu</h3>
             <ul class="list-unstyled mb-0">
-              <li class="py-0"><a href="{{ asset('assets/#" class="text-gray hover-primary lh-2 font-weight-500')}}">Seatting</a> </li>
-              <li class="py-0"><a href="{{ asset('assets/#" class="text-gray hover-primary lh-2 font-weight-500')}}">Tables</a> </li>
-              <li class="py-0"><a href="{{ asset('assets/#" class="text-gray hover-primary lh-2 font-weight-500')}}">Decoration</a> </li>
-              <li class="py-0"><a href="{{ asset('assets/#" class="text-gray hover-primary lh-2 font-weight-500')}}">Gift Ideas</a> </li>
+              <li class="py-0"><a href="{{ asset('assets/#') }}" class="text-gray hover-primary lh-2 font-weight-500">Seatting</a> </li>
+              <li class="py-0"><a href="{{ asset('assets/#') }}" class="text-gray hover-primary lh-2 font-weight-500">Tables</a> </li>
+              <li class="py-0"><a href="{{ asset('assets/#') }}" class="text-gray hover-primary lh-2 font-weight-500">Decoration</a> </li>
+              <li class="py-0"><a href="{{ asset('assets/#') }}" class="text-gray hover-primary lh-2 font-weight-500">Gift Ideas</a> </li>
             </ul>
           </div>
           <div class="col-md-6 col-lg-3 mb-6 mb-lg-0">
             <h3 class="fs-14 mb-3 text-uppercase letter-spacing-05">about</h3>
             <ul class="list-unstyled mb-0">
-              <li class="py-0"><a href="{{ asset('assets/#" class="text-gray hover-primary lh-2 font-weight-500')}}">Contact Us</a> </li>
-              <li class="py-0"><a href="{{ asset('assets/#" class="text-gray hover-primary lh-2 font-weight-500')}}">Contributiors</a> </li>
-              <li class="py-0"><a href="{{ asset('assets/#" class="text-gray hover-primary lh-2 font-weight-500')}}">Privacy</a> </li>
-              <li class="py-0"><a href="{{ asset('assets/#" class="text-gray hover-primary lh-2 font-weight-500')}}">Sponsors</a> </li>
+              <li class="py-0"><a href="/contact" class="text-gray hover-primary lh-2 font-weight-500">Contact Us</a> </li>
             </ul>
           </div>
-          <div class="col-md-6 col-lg-3 mb-6 mb-lg-0">
+          <div class="col-md-6 col-lg-6 mb-0 mb-lg-12">
             <h3 class="fs-14 mb-3 text-uppercase letter-spacing-05">follow us</h3>
             <ul class="list-unstyled mb-0">
-              <li class="py-0"><a href="{{ asset('assets/#" class="text-gray hover-primary lh-2 font-weight-500')}}">Facebook</a> </li>
-              <li class="py-0"><a href="{{ asset('assets/#" class="text-gray hover-primary lh-2 font-weight-500')}}">Pinterest</a> </li>
-              <li class="py-0"><a href="{{ asset('assets/#" class="text-gray hover-primary lh-2 font-weight-500')}}">Instagram</a> </li>
-              <li class="py-0"><a href="{{ asset('assets/#" class="text-gray hover-primary lh-2 font-weight-500')}}">Twitter</a> </li>
+              <li class="py-0"><a href="{{ asset('assets/#') }}" class="text-gray hover-primary lh-2 font-weight-500">Facebook</a> </li>
+              <li class="py-0"><a href="{{ asset('assets/#') }}" class="text-gray hover-primary lh-2 font-weight-500">Pinterest</a> </li>
+              <li class="py-0"><a href="{{ asset('assets/#') }}" class="text-gray hover-primary lh-2 font-weight-500">Instagram</a> </li>
+              <li class="py-0"><a href="{{ asset('assets/#') }}" class="text-gray hover-primary lh-2 font-weight-500">Twitter</a> </li>
             </ul>
-          </div>
-          <div class="col-md-6 col-lg-3 mb-6 mb-lg-0">
-            <h3 class="fs-14 mb-3 text-uppercase letter-spacing-05">newsletter</h3>
-            <form>
-              <div class="input-group position-relative">
-                <input type="text" class="form-control border-top-0 border-left-0 border-right-0 px-0 border-2x bg-transparent" placeholder="Email Address">
-                <div class="input-group-append fs-14 position-absolute pos-fixed-right-center z-index-2">
-                  <button class="bg-transparent border-0 outline-none">
-                    <i class="far fa-arrow-right"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
           </div>
         </div>
         <div class="mt-2 mt-md-7 row align-items-center">
@@ -161,7 +147,6 @@
     <script src="{{ asset('assets/vendors/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/hc-sticky/hc-sticky.min.js') }}"></script>
     <script src="{{ asset('assets/vendors/jparallax/TweenMax.min.js') }}"></script>
-    <script src="{{ asset('assets/vendors/mapbox-gl/mapbox-gl.js') }}"></script>
     <!-- Theme scripts -->
     <script src="{{ asset('assets/js/theme.js') }}"></script>
     @livewireScripts()

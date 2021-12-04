@@ -23,6 +23,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nama</th>
+                                <th>Slug</th>
                                 <th>Kategori</th>
                                 <th>Deskripsi</th>
                                 <th>Status</th>
@@ -32,6 +33,7 @@
                                 <tr>
                                     <td>{{$blog->id}}</td>
                                     <td>{{$blog->title}}</td>
+                                    <td>{{$blog->slug}}</td>
                                     <td>{{$blog->category->name}}</td>
                                     {{--                                <td>{{ $blog->tags->pluck('name')->whenEmpty(function() { echo "-"; }, function($collection) { return $collection->join(', '); }) }}</td>--}}
                                     <td>{{\Illuminate\Support\Str::limit($blog->description,30)}}</td>

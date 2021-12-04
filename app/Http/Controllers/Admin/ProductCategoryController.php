@@ -28,6 +28,12 @@ class ProductCategoryController extends Controller
     {
         $category = new ProductCategory();
         $category->name = $request->input('name');
+        $category->slug = $request->input('slug');
+        if ($request->hasFile('image')) {
+            $category->imageUrl = $request->file('image')->store('public/images/blog');
+        } else {
+            $category->imageUrl = "";
+        }
         $category->save();
 
         return redirect(route('admin::product-category::index'));
@@ -43,6 +49,12 @@ class ProductCategoryController extends Controller
     public function update(Request $request,ProductCategory $category)
     {
         $category->name = $request->input('name');
+        $category->slug = $request->input('slug');
+        if ($request->hasFile('image')) {
+            $category->imageUrl = $request->file('image')->store('public/images/blog');
+        } else {
+            $category->imageUrl = "";
+        }
         $category->save();
 
         return redirect(route('admin::product-category::index'));

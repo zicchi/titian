@@ -23,12 +23,14 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
+                                <th>Slug</th>
                                 <th>Action</th>
                             </tr>
                             @foreach($materials as $material)
                                 <tr>
                                     <td>{{$material->id}}</td>
                                     <td><a href="{{route('admin::product::index',['material' => $material->name])}}">{{$material->name}}</a></td>
+                                    <td>{{ $material->slug }}</td>
                                     <td>
                                         <a href="{{route('admin::materials::edit',[$material])}}" class="btn btn-info">Update</a>
                                         <a href="javascript:" onclick="if(confirm('Anda yakin ingin menghapus item ini?')){$('#delete-item-{{$material->id}}').submit()};" class="btn btn-danger">Hapus</a>

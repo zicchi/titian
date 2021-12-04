@@ -52,7 +52,7 @@ class ProductController extends Controller
         $product->price = $request->input('price');
         $product->description = $request->input('description');
         if ($request->hasFile('image')) {
-            $product->imageUrl = $request->file('image')->store('public/images/products');
+            $product->imageUrl = $request->file('image')->store('public/storage/products');
         } else {
             $product->imageUrl = "";
         }
