@@ -116,8 +116,8 @@ Route::group(['middleware' => ['admin']],function (){
             Route::get('/',[GalleryController::class,'index'])->name('index');
             Route::get('/create',[GalleryController::class,'create'])->name('create');
             Route::post('/create',[GalleryController::class,'store'])->name('store');
-            Route::get('/edit/{gallery}',[GalleryController::class,'edit'])->name('edit');
-            Route::put('/edit/{gallery}',[GalleryController::class,'update'])->name('update');
+            Route::get('/edit/{galleries}',[GalleryController::class,'edit'])->name('edit');
+            Route::put('/edit/{galleries}',[GalleryController::class,'update'])->name('update');
             Route::delete('/delete/{gallery}',[GalleryController::class,'destroy'])->name('destroy');
         });
 
