@@ -51,42 +51,6 @@
               <div class="card border-0 mb-7">
                 <div class="card-header bg-transparent border-0 p-0">
                   <h3 class="card-title fs-20 mb-0">
-                    Price
-                  </h3>
-                </div>
-                <div class="card-body px-0 pt-4 pb-0">
-                  <ul class="list-unstyled mb-0">
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">All
-                      </a>
-                    </li>
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">$10
-                        - $100</a>
-                    </li>
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">$100
-                        - $200</a>
-                    </li>
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">$200
-                        - $300</a>
-                    </li>
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">$300
-                        - $400</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="card border-0 mb-7">
-                <div class="card-header bg-transparent border-0 p-0">
-                  <h3 class="card-title fs-20 mb-0">
                     Material
                   </h3>
                 </div>
@@ -121,83 +85,23 @@
                   </ul>
                 </div>
               </div>
-              <div class="card border-0">
-                <div class="card-header bg-transparent border-0 p-0">
-                  <h3 class="card-title fs-20 mb-0">
-                    Tags
-                  </h3>
-                </div>
-                <div class="card-body px-0 pt-6 pb-0">
-                  <ul class="list-inline mb-0">
-                    <li class="list-inline-item mr-2 py-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Vintage</a>
-                    </li>
-                    <li class="list-inline-item mr-2 py-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Awesome</a>
-                    </li>
-                    <li class="list-inline-item mr-2 py-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Summer</a>
-                    </li>
-                    <li class="list-inline-item mr-2 py-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Beachwear</a>
-                    </li>
-                    <li class="list-inline-item mr-2 py-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Sunglasses</a>
-                    </li>
-                    <li class="list-inline-item mr-2 py-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Winter</a>
-                    </li>
-                    <li class="list-inline-item mr-2 py-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Shorts</a>
-                    </li>
-                    <li class="list-inline-item mr-2 py-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Cool</a>
-                    </li>
-                    <li class="list-inline-item mr-2 py-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Nice</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
           </div>
           <div class="col-md-9">
             <div class="d-flex mb-6">
               <div class="ml-auto">
                 <div class="dropdown">
-                  {{-- <a href="#" class="dropdown-toggle fs-14" id="dropdownMenuButton" data-toggle="dropdown"
-                             aria-haspopup="true" aria-expanded="false">
-                    Default Sorting
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton" >
-                    <a class="dropdown-item text-primary fs-14" href="#">Price high to low</a>
-                    <a class="dropdown-item text-primary fs-14" href="#">Price low to high</a>
-                    <a class="dropdown-item text-primary fs-14" href="#">Random</a>
-                  </div> --}}
-                  <select name="orderby" id="sorting" wire:model="sorting">
-                      <option value="default" class="dropdown-item text-primary fs-14" >Default Sorting</option>
-                      <option value="lowToHigh" class="dropdown-item text-primary fs-14" >Price low to high</option>
-                      <option value="highToLow" class="dropdown-item text-primary fs-14" >Price high to low</option>
-                  </select>
                 </div>
               </div>
             </div>
 
             <div class="row">
+            <a href="{{ $category->name  }}"></a>
               @foreach ($products as $product)
               <div class="col-sm-6 col-lg-4 mb-8" data-animate="fadeInUp">
                 <div class="card border-0 hover-change-content product">
                   <div class="card-img-top position-relative">
-                    <div style="background-image: url('{{ asset('assets/images/product-19.jpg')}}')"
+                    <div style="background-image: url(' {{ \Illuminate\Support\Facades\Storage::url($product->imageUrl) }} ')"
                                    class="card-img ratio bg-img-cover-center ratio-1-1">
                     </div>
                   </div>

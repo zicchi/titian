@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\MaterialController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Livewire\AboutComponent;
+use App\Http\Livewire\BlogCategoryComponent;
 use App\Http\Livewire\BlogComponent;
 use App\Http\Livewire\BlogDetailsComponent;
 use App\Http\Livewire\CategoryComponent;
@@ -45,11 +47,11 @@ Route::get('/product-category/{category_slug}', CategoryComponent::class)->name(
 
 Route::get('/about', AboutComponent::class);
 
-Route::get('/gallery', GalleryComponent::class);
-
 Route::get('/blog', BlogComponent::class);
 
 Route::get('/blog/{slug}', BlogDetailsComponent::class)->name('blog.details');
+
+Route::get('/gallery', GalleryComponent::class);
 
 Route::get('/faq', FAQComponent::class);
 
@@ -108,6 +110,15 @@ Route::group(['middleware' => ['admin']],function (){
             Route::put('/edit/{blog}',[BlogController::class,'update'])->name('update');
             Route::delete('/delete/{blog}',[BlogController::class,'destroy'])->name('destroy');
             Route::get('/{blog}',[BlogController::class,'show'])->name('show');
+        });
+
+        Route::group(['namespace' => 'Galleries', 'prefix' => 'galleries', 'as' => 'galleries::'], function() {
+            Route::get('/',[GalleryController::class,'index'])->name('index');
+            Route::get('/create',[GalleryController::class,'create'])->name('create');
+            Route::post('/create',[GalleryController::class,'store'])->name('store');
+            Route::get('/edit/{gallery}',[GalleryController::class,'edit'])->name('edit');
+            Route::put('/edit/{gallery}',[GalleryController::class,'update'])->name('update');
+            Route::delete('/delete/{gallery}',[GalleryController::class,'destroy'])->name('destroy');
         });
 
         Route::group(['namespace' => 'Faqs', 'prefix' => 'faqs', 'as' => 'faqs::'], function() {

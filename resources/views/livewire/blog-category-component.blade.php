@@ -38,15 +38,15 @@
                   </h3>
                 </div>
                 <div class="card-body px-0 pt-4 pb-0">
-                    <ul class="list-unstyled mb-0">
-                      @foreach ($allblogs as $allblog)
-                        <li class="mb-1">
-                          <a href=""
-                                         class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">{{ $allblog->category->name }}</a>
-                        </li>
-                      @endforeach
-                    </ul>
-                  </div>
+                  <ul class="list-unstyled mb-0">
+                    @foreach ($categories as $category)
+                      <li class="mb-1">
+                        <a href="{{ route('blog.category', ['category_slug' => $category->slug]) }}"
+                                       class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">{{ $category->name }}</a>
+                      </li>
+                    @endforeach
+                  </ul>
+                </div>
               </div>
             </div>
           </section>

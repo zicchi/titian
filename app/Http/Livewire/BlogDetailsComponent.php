@@ -3,12 +3,14 @@
 namespace App\Http\Livewire;
 
 use App\Models\Blog;
+use App\Models\BlogCategory;
 use App\Models\Product;
 use Livewire\Component;
 
 class BlogDetailsComponent extends Component
 {
     public $slug;
+    public $category_slug;
 
     public function mount($slug)
     {
@@ -18,15 +20,12 @@ class BlogDetailsComponent extends Component
     public function render()
     {
         $blogs = Blog::where('slug', $this->slug)->first();
+        $allblogs = Blog::all();
+
         $shareComponent = \Share::currentPage()
         ->facebook()
         ->whatsapp();
 
-        return view('livewire.blog-details-component',['blogs' => $blogs, 'shareComponent'=> $shareComponent])->layout('layouts.base');
-    }
-
-    public function ShareWidget()
-    {
-
+        return view('livewire.blog-details-component',['blogs' => $blogs, 'allblogs'=> $allblogs, 'shareComponent'=> $shareComponent])->layout('layouts.base');
     }
 }
