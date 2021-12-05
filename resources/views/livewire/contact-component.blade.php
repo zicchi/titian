@@ -44,7 +44,7 @@
             <div class="row">
 
       <div class="container container-xxl">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.418970359675!2d112.61377221370569!3d-7.955581681471682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7883a8ac70e8eb%3A0x194d6b16b91f4abc!2sKantin%20Vokasi%20Universitas%20Brawijaya!5e0!3m2!1sid!2sid!4v1638351033400!5m2!1sid!2sid" width="1100" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="{{ $contacts[0]->maps }}" width="100%" height="400px" style="border:0;" allowfullscreen="true" loading="lazy"></iframe>
             </div>
         </div>
     </section>

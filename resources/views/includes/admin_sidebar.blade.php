@@ -19,11 +19,12 @@
             </li>
             <li class="{{request()->is('admin/products*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::product::index')}}"><i class="fas fa-chair"></i> <span>Produk</span></a></li>
             </li>
-            <li class="{{request()->is('admin/abouts*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::abouts::index')}}"><i class="fas fa-chair"></i> <span>Abouts</span></a></li>
+            <li class="{{request()->is('admin/abouts*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::abouts::index')}}"><i class="fas fa-passport"></i> <span>Abouts</span></a></li>
             <li class="{{request()->is('admin/blogs*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::blogs::index')}}"><i class="fas fa-newspaper"></i> <span>Blog</span></a></li>
-            <li class="{{request()->is('admin/galleries*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::galleries::index')}}"><i class="fas fa-newspaper"></i> <span>Gallery</span></a></li>
+            <li class="{{request()->is('admin/galleries*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::galleries::index')}}"><i class="fas fa-image"></i> <span>Gallery</span></a></li>
             <li class="{{request()->is('admin/faqs*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::faqs::index')}}"><i class="fas fa-question"></i> <span>FAQ</span></a></li>
-            <li class="{{request()->is('admin/faqs*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::clients::index')}}"><i class="fas fa-question"></i> <span>Client</span></a></li>
+            <li class="{{request()->is('admin/faqs*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::clients::index')}}"><i class="fas fa-smile-wink"></i> <span>Client</span></a></li>
+            <li class="{{request()->is('admin/contacts*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::contacts::index')}}"><i class="fas fa-phone"></i> <span>Contact</span></a></li>
             @if(auth()->user()->role == 'superadmin')
                 <li class="{{request()->is('admin/users*') ? 'active' : ''}}"><a class="nav-link" href="{{route('admin::users::index')}}"><i class="fas fa-user"></i> <span>User</span></a></li>
             @endif

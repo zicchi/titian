@@ -16,5 +16,6 @@ class Contact extends Model
         'bio',
         'instagram',
         'facebook',
+        'maps',
     ];
 }

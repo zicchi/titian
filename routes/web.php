@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ClientController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\GalleryController;
@@ -145,6 +146,12 @@ Route::group(['middleware' => ['admin']],function (){
             Route::get('/edit/{galleries}',[GalleryController::class,'edit'])->name('edit');
             Route::put('/edit/{galleries}',[GalleryController::class,'update'])->name('update');
             Route::delete('/delete/{gallery}',[GalleryController::class,'destroy'])->name('destroy');
+        });
+
+        Route::group(['namespace' => 'Contacts', 'prefix' => 'contacts', 'as' => 'contacts::'], function() {
+            Route::get('/',[ContactController::class,'index'])->name('index');
+            Route::get('/edit/{contacts}',[ContactController::class,'edit'])->name('edit');
+            Route::put('/edit/{contacts}',[ContactController::class,'update'])->name('update');
         });
 
         Route::group(['prefix' => 'data'],function (){

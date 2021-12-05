@@ -15,6 +15,7 @@ class AddToFieldContacts extends Migration
     {
         Schema::table('contacts', function (Blueprint $table) {
             $table->text('email');
+            $table->text('maps');
         });
     }
 
