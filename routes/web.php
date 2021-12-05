@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\BlogCategoryController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\GalleryController;
@@ -102,6 +104,12 @@ Route::group(['middleware' => ['admin']],function (){
             Route::delete('/delete/{user}',[UserController::class,'destroy'])->name('destroy');
         });
 
+        Route::group(['namespace' => 'Abouts', 'prefix' => 'abouts', 'as' => 'abouts::'], function() {
+            Route::get('/',[AboutController::class,'index'])->name('index');
+            Route::get('/edit/{abouts}',[AboutController::class,'edit'])->name('edit');
+            Route::put('/edit/{abouts}',[AboutController::class,'update'])->name('update');
+        });
+
         Route::group(['namespace' => 'Blogs', 'prefix' => 'blogs', 'as' => 'blogs::'], function() {
             Route::get('/',[BlogController::class,'index'])->name('index');
             Route::get('/create',[BlogController::class,'create'])->name('create');
@@ -112,13 +120,13 @@ Route::group(['middleware' => ['admin']],function (){
             Route::get('/{blog}',[BlogController::class,'show'])->name('show');
         });
 
-        Route::group(['namespace' => 'Galleries', 'prefix' => 'galleries', 'as' => 'galleries::'], function() {
-            Route::get('/',[GalleryController::class,'index'])->name('index');
-            Route::get('/create',[GalleryController::class,'create'])->name('create');
-            Route::post('/create',[GalleryController::class,'store'])->name('store');
-            Route::get('/edit/{galleries}',[GalleryController::class,'edit'])->name('edit');
-            Route::put('/edit/{galleries}',[GalleryController::class,'update'])->name('update');
-            Route::delete('/delete/{gallery}',[GalleryController::class,'destroy'])->name('destroy');
+        Route::group(['namespace' => 'Client', 'prefix' => 'clients', 'as' => 'clients::'], function() {
+            Route::get('/',[ClientController::class,'index'])->name('index');
+            Route::get('/create',[ClientController::class,'create'])->name('create');
+            Route::post('/create',[ClientController::class,'store'])->name('store');
+            Route::get('/edit/{clients}',[ClientController::class,'edit'])->name('edit');
+            Route::put('/edit/{clients}',[ClientController::class,'update'])->name('update');
+            Route::delete('/delete/{client}',[ClientController::class,'destroy'])->name('destroy');
         });
 
         Route::group(['namespace' => 'Faqs', 'prefix' => 'faqs', 'as' => 'faqs::'], function() {
@@ -128,6 +136,15 @@ Route::group(['middleware' => ['admin']],function (){
             Route::get('/edit/{faq}',[FaqController::class,'edit'])->name('edit');
             Route::put('/edit/{faq}',[FaqController::class,'update'])->name('update');
             Route::delete('/delete/{faq}',[FaqController::class,'destroy'])->name('destroy');
+        });
+
+        Route::group(['namespace' => 'Clients', 'prefix' => 'galleries', 'as' => 'galleries::'], function() {
+            Route::get('/',[GalleryController::class,'index'])->name('index');
+            Route::get('/create',[GalleryController::class,'create'])->name('create');
+            Route::post('/create',[GalleryController::class,'store'])->name('store');
+            Route::get('/edit/{galleries}',[GalleryController::class,'edit'])->name('edit');
+            Route::put('/edit/{galleries}',[GalleryController::class,'update'])->name('update');
+            Route::delete('/delete/{gallery}',[GalleryController::class,'destroy'])->name('destroy');
         });
 
         Route::group(['prefix' => 'data'],function (){

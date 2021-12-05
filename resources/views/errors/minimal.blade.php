@@ -12,8 +12,8 @@
     <!-- CSS Libraries -->
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/components.css') }}">
 </head>
 
 <body>
@@ -28,7 +28,7 @@
                     </div>
                     <div class="page-search">
                         <div class="mt-3">
-                            <a href="{{route('admin::dashboard')}}">Back to Home</a>
+                            <a href="/" class="btn btn-primary">Kembali ke Home</a>
                         </div>
                     </div>
                 </div>
@@ -48,8 +48,8 @@
 <!-- JS Libraies -->
 
 <!-- Template JS File -->
-<script src="../assets/js/scripts.js"></script>
-<script src="../assets/js/custom.js"></script>
+<script src="{{ asset('assets/js/scripts.js') }}"></script>
+<script src="{{ asset('assets/js/custom.js') }}"></script>
 
 <!-- Page Specific JS File -->
 </body>

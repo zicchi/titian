@@ -124,138 +124,23 @@
         <h2 class="mb-10 text-center fs-30 fs-md-40">Happy Clients</h2>
         <div class="slick-slider custom-arrow-1"
            data-slick-options='{"slidesToShow": 3,"infinite":true,"autoplay":false,"dots":false,"arrows":true,"responsive":[{"breakpoint": 1200,"settings": {"slidesToShow":2,"arrows":false,"dots":true}},{"breakpoint": 576,"settings": {"slidesToShow": 1,"arrows":false,"dots":true}}]}'>
+          @foreach ($clients as $client)
           <div class="box" data-animate="fadeInUp">
             <div class="card border-0">
               <div class="card-body px-3 py-0 text-center">
-                <div class="mxw-84px mb-6 mx-auto">
-                  <img src="{{ asset('assets/images/tes_01.png')}}" alt="Sampson Totton">
+                <div class="mxw-120px mb-6 mx-auto">
+                  <img src="{{ \Illuminate\Support\Facades\Storage::url( $client->imageURL ) }}" alt="{{ $client->nama }}">
                 </div>
-                <ul class="list-inline mb-4">
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                </ul>
                 <p class="card-text mb-4 font-weight-500">
-                  “These are beautiful, well made & comfortable! I bought them to wear to work & casually. I wore them immediately walking in the city & has no problem. “
+                  “{{ $client->testimoni }}“
                 </p>
-                <p class="card-text text-primary font-weight-bold mb-1 fs-15">Sampson Totton</p>
+                <p class="card-text text-primary font-weight-bold mb-1 fs-15">{{ $client->nama }}</p>
                 <p class="card-text text-muted fs-13 text-uppercase letter-spacing-05 font-weight-500">
-                  Golden Clock</p>
+                  {{ $client->pekerjaan }}</p>
               </div>
             </div>
           </div>
-          <div class="box" data-animate="fadeInUp">
-            <div class="card border-0">
-              <div class="card-body px-3 py-0 text-center">
-                <div class="mxw-84px mb-6 mx-auto">
-                  <img src="{{ asset('assets/images/tes_02.png')}}" alt="Alfie Wood">
-                </div>
-                <ul class="list-inline mb-4">
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                </ul>
-                <p class="card-text mb-4 font-weight-500">
-                  “ Clothers are addicting! Love this brand and shoe. The arch support is wonderful and helps for long hours on your body. The narrow heel is wonderfully ! “
-                </p>
-                <p class="card-text text-primary font-weight-bold mb-1 fs-15">Alfie Wood</p>
-                <p class="card-text text-muted fs-13 text-uppercase letter-spacing-05 font-weight-500">
-                  Piper Bar</p>
-              </div>
-            </div>
-          </div>
-          <div class="box" data-animate="fadeInUp">
-            <div class="card border-0">
-              <div class="card-body px-3 py-0 text-center">
-                <div class="mxw-84px mb-6 mx-auto">
-                  <img src="{{ asset('assets/images/tes_03.png')}}" alt="Herse Hedman">
-                </div>
-                <ul class="list-inline mb-4">
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                </ul>
-                <p class="card-text mb-4 font-weight-500">
-                  “Super class, cute, comfortable. You can wear them with just about anything.I will never sacrifice for style.”“
-                </p>
-                <p class="card-text text-primary font-weight-bold mb-1 fs-15">Herse Hedman</p>
-                <p class="card-text text-muted fs-13 text-uppercase letter-spacing-05 font-weight-500">
-                  Potato Chair</p>
-              </div>
-            </div>
-          </div>
-          <div class="box" data-animate="fadeInUp">
-            <div class="card border-0">
-              <div class="card-body px-3 py-0 text-center">
-                <div class="mxw-84px mb-6 mx-auto">
-                  <img src="{{ asset('assets/images/tes_01.png')}}" alt="Herse Hedman">
-                </div>
-                <ul class="list-inline mb-4">
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                </ul>
-                <p class="card-text mb-4 font-weight-500">
-                  “Super class, cute, comfortable. You can wear them with just about anything.I will never sacrifice for style.”“
-                </p>
-                <p class="card-text text-primary font-weight-bold mb-1 fs-15">Herse Hedman</p>
-                <p class="card-text text-muted fs-13 text-uppercase letter-spacing-05 font-weight-500">
-                  Potato Chair</p>
-              </div>
-            </div>
-          </div>
-          <div class="box" data-animate="fadeInUp">
-            <div class="card border-0">
-              <div class="card-body px-3 py-0 text-center">
-                <div class="mxw-84px mb-6 mx-auto">
-                  <img src="{{ asset('assets/images/tes_02.png')}}" alt="Herse Hedman">
-                </div>
-                <ul class="list-inline mb-4">
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                </ul>
-                <p class="card-text mb-4 font-weight-500">
-                  “Super class, cute, comfortable. You can wear them with just about anything.I will never sacrifice for style.”“
-                </p>
-                <p class="card-text text-primary font-weight-bold mb-1 fs-15">Herse Hedman</p>
-                <p class="card-text text-muted fs-13 text-uppercase letter-spacing-05 font-weight-500">
-                  Potato Chair</p>
-              </div>
-            </div>
-          </div>
-          <div class="box" data-animate="fadeInUp">
-            <div class="card border-0">
-              <div class="card-body px-3 py-0 text-center">
-                <div class="mxw-84px mb-6 mx-auto">
-                  <img src="{{ asset('assets/images/tes_03.png')}}" alt="Herse Hedman">
-                </div>
-                <ul class="list-inline mb-4">
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                  <li class="list-inline-item fs-14 text-primary mr-0"><i class="fas fa-star"></i></li>
-                </ul>
-                <p class="card-text mb-4 font-weight-500">
-                  “Super class, cute, comfortable. You can wear them with just about anything.I will never sacrifice for style.”“
-                </p>
-                <p class="card-text text-primary font-weight-bold mb-1 fs-15">Herse Hedman</p>
-                <p class="card-text text-muted fs-13 text-uppercase letter-spacing-05 font-weight-500">
-                  Potato Chair</p>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </section>
