@@ -19,31 +19,17 @@
                 <h3 class="card-title mb-2 fs-20">
                   <a href="{{ route('blog.details', ['slug'=>$blog->slug]) }}">{{ $blog->title }}</a>
                 </h3>
-                <p class="card-text mb-4 font-weight-500">{{ $blog->title }}</p>
-                <a href="{{ route('blog.details', ['slug'=>$blog->slug]) }}"
-                         class="fs-14 font-weight-bold border-bottom border-light-dark text-uppercase letter-spacing-05 d-inline-block border-hover-primary">
-                  Read more
-                </a>
               </div>
             </div>
           </div>
 
             @endforeach
         </div>
+
         <nav class="pt-2">
-          <ul class="pagination justify-content-center align-items-center mb-0">
-            <li class="page-item fs-12 d-none d-sm-block">
-              <a class="page-link" href="#" tabindex="-1"><i class="far fa-angle-double-left"></i></a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item active" aria-current="page"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">...</a></li>
-            <li class="page-item"><a class="page-link" href="#">6</a></li>
-            <li class="page-item fs-12 d-none d-sm-block">
-              <a class="page-link" href="#"><i class="far fa-angle-double-right"></i></a>
-            </li>
-          </ul>
+              <div class="pagination justify-content-center align-items-center mb-0">
+                  {{$blogs->links()}}
+              </div>
         </nav>
       </div>
     </section>

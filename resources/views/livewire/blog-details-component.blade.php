@@ -41,8 +41,8 @@
                     <ul class="list-unstyled mb-0">
                       @foreach ($allblogs as $allblog)
                         <li class="mb-1">
-                          <a href=""
-                                         class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">{{ $allblog->category->name }}</a>
+                          <a href="{{route('blog',['category' => $allblog->id])}}"
+                                         class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">{{ $allblog->name }}</a>
                         </li>
                       @endforeach
                     </ul>

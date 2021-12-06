@@ -50,9 +50,9 @@ Route::get('/product-category/{category_slug}', CategoryComponent::class)->name(
 
 Route::get('/about', AboutComponent::class);
 
-Route::get('/blog', BlogComponent::class);
+Route::get('/blog', BlogComponent::class)->name('blog');
 
-Route::get('/blog/{slug}', BlogDetailsComponent::class)->name('blog.details');
+Route::get('/blog/detail/{slug}', BlogDetailsComponent::class)->name('blog.details');
 
 Route::get('/gallery', GalleryComponent::class);
 

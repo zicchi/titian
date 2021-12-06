@@ -20,7 +20,7 @@ class BlogDetailsComponent extends Component
     public function render()
     {
         $blogs = Blog::where('slug', $this->slug)->first();
-        $allblogs = Blog::all();
+        $allblogs = BlogCategory::all();
 
         $shareComponent = \Share::currentPage()
         ->facebook()
