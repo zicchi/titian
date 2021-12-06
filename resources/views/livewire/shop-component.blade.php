@@ -58,9 +58,9 @@
                   <ul class="list-unstyled mb-0">
                     @foreach ($materials as $material)
                     <li class="mb-1">
-                      <a href="{{ route('product.material', ['material_slug' => $material->slug])  }}"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                        {{ $material->name }}
+                        <a href="{{ route('shop', ['material' => $material->id])  }}"
+                           class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
+                            {{ $material->name }}
                       </a>
                     </li>
                     @endforeach

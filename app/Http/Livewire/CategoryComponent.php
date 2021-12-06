@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Material;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Livewire\Component;
@@ -26,7 +27,8 @@ class CategoryComponent extends Component
         $products = Product::where('product_category_id', $category_id)->paginate(1);
 
         $categories = ProductCategory::all();
+        $materials = Material::all();
 
-        return view('livewire.category-component', ['products' => $products, 'categories' => $categories, 'categories_name' => $category_name])->layout('layouts.base');
+        return view('livewire.category-component', ['products' => $products, 'categories' => $categories, 'categories_name' => $category_name,'materials' => $materials])->layout('layouts.base');
     }
 }

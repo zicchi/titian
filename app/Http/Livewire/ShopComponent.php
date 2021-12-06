@@ -22,15 +22,20 @@ class ShopComponent extends Component
 
     public function render()
     {
+        $query = Product::when(request()->filled('material'),function ($q){
+            $q->whereHas('materials',function ($q){
+                $q->where('id',request()->input('material'));
+            });
+        });
         if ($this->sorting == "lowToHigh")
         {
-            $products = Product::orderBy('price', 'DESC')->paginate($this->pageSize);
+            $products = $query->orderBy('price', 'DESC')->paginate($this->pageSize);
         }
         else if ($this->sorting == "highToLow")
         {
-            $products = Product::orderBy('price', 'ASC')->paginate($this->pageSize);
+            $products = $query->orderBy('price', 'ASC')->paginate($this->pageSize);
         }else {
-            $products = Product::paginate($this->pageSize);
+            $products = $query->paginate($this->pageSize);
         }
 
         $categories = ProductCategory::all();

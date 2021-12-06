@@ -56,32 +56,14 @@
                 </div>
                 <div class="card-body px-0 pt-4 pb-0">
                   <ul class="list-unstyled mb-0">
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                        Laminate
-                      </a>
-                    </li>
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Acrylic</a>
-                    </li>
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Aluminium</a>
-                    </li>
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Cotton</a>
-                    </li>
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Leather</a>
-                    </li>
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Metal</a>
-                    </li>
+                      @foreach ($materials as $material)
+                          <li class="mb-1">
+                              <a href="{{ route('shop', ['material' => $material->id])  }}"
+                                 class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
+                                  {{ $material->name }}
+                              </a>
+                          </li>
+                      @endforeach
                   </ul>
                 </div>
               </div>

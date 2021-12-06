@@ -43,13 +43,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeComponent::class);
 
-Route::get('/shop', ShopComponent::class);
+Route::get('/shop', ShopComponent::class)->name('shop');
 
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 
 Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
-
-Route::get('/product-material/{material_slug}', MaterialComponent::class)->name('product.material');
 
 Route::get('/about', AboutComponent::class);
 
