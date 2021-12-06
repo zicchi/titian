@@ -20,9 +20,10 @@ class CategoryComponent extends Component
     public function render()
     {
         $category = ProductCategory::where('slug', $this->category_slug)->first();
+        $category_id = $category->id;
         $category_name = $category->name;
 
-        $products = Product::paginate(1);
+        $products = Product::where('product_category_id', $category_id)->paginate(1);
 
         $categories = ProductCategory::all();
 
