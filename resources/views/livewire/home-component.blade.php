@@ -144,7 +144,7 @@
         </div>
       </div>
     </section>
-    <section class="py-8">
+    {{-- <section class="py-8">
       <div class="container container-xxl">
         <div class="slick-slider"
            data-slick-options='{"slidesToShow": 7,"infinite":true,"autoplay":false,"dots":false,"arrows":false,"responsive":[{"breakpoint": 1367,"settings": {"slidesToShow":5}},{"breakpoint": 992,"settings": {"slidesToShow":5}},{"breakpoint": 768,"settings": {"slidesToShow": 4}},{"breakpoint": 576,"settings": {"slidesToShow": 2}}]}'>
@@ -210,5 +210,5 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
   </main>

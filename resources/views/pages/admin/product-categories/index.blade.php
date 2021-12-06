@@ -32,7 +32,14 @@
                                     <td>{{$category->id}}</td>
                                     <td>{{$category->name}}</td>
                                     <td>{{$category->slug}}</td>
-                                    <td>{{$category->imageURL}}</td>
+                                    <td>
+                                        @if($category->imageURL)
+                                            <img src="{{ \Illuminate\Support\Facades\Storage::url($category->imageURL) }}" alt="" class="img-thumbnail" width="250px">
+                                        @else
+                                            <dd>Gambar tidak tersedia</dd>
+                                        @endif
+
+                                </td>
                                     <td>
                                         <a href="{{route('admin::product-category::edit',[$category])}}" class="btn btn-info">Update</a>
                                         <a href="javascript:" onclick="if(confirm('Anda yakin ingin menghapus item ini?')){$('#delete-item-{{$category->id}}').submit()};" class="btn btn-danger">Hapus</a>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Material;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Livewire\Component;
@@ -33,7 +34,8 @@ class ShopComponent extends Component
         }
 
         $categories = ProductCategory::all();
+        $materials = Material::all();
 
-        return view('livewire.shop-component', ['products' => $products, 'categories' => $categories])->layout('layouts.base');
+        return view('livewire.shop-component', ['products' => $products, 'categories' => $categories, 'materials' => $materials])->layout('layouts.base');
     }
 }

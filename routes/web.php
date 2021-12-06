@@ -25,6 +25,7 @@ use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\FAQComponent;
 use App\Http\Livewire\GalleryComponent;
 use App\Http\Livewire\HomeComponent;
+use App\Http\Livewire\MaterialComponent;
 use App\Http\Livewire\ShopComponent;
 use App\Models\BlogCategory;
 use Illuminate\Support\Facades\Route;
@@ -47,6 +48,8 @@ Route::get('/shop', ShopComponent::class);
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 
 Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
+
+Route::get('/product-material/{material_slug}', MaterialComponent::class)->name('product.material');
 
 Route::get('/about', AboutComponent::class);
 

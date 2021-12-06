@@ -11,7 +11,7 @@
                @foreach ($categories as $category)
               <div class="box" data-animate="fadeInUp">
                 <div class="card border-0">
-                  <img src="{{ asset('assets/images/c_07.jpg')}}" alt="Chairs" class="card-img">
+                  <img src="{{  }}" alt="Chairs" class="card-img">
                   <div class="card-img-overlay d-inline-flex flex-column px-6 py-4">
                       <h3 class="card-title fs-30">{{$category->name}}</h3>
                     <div class="mt-auto">

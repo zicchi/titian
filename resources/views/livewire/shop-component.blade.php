@@ -11,7 +11,7 @@
            @foreach ($categories as $category)
           <div class="box" data-animate="fadeInUp">
             <div class="card border-0">
-              <img src="{{ asset('assets/images/c_07.jpg')}}" alt="Chairs" class="card-img">
+              <img src="{{ \Illuminate\Support\Facades\Storage::url( $category->imageURL ) }}" alt="Chairs" class="card-img">
               <div class="card-img-overlay d-inline-flex flex-column px-6 py-4">
                   <h3 class="card-title fs-30">{{$category->name}}</h3>
                 <div class="mt-auto">
@@ -56,32 +56,14 @@
                 </div>
                 <div class="card-body px-0 pt-4 pb-0">
                   <ul class="list-unstyled mb-0">
+                    @foreach ($materials as $material)
                     <li class="mb-1">
-                      <a href="#"
+                      <a href="{{ route('product.material', ['material_slug' => $material->slug])  }}"
                                      class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">
-                        Laminate
+                        {{ $material->name }}
                       </a>
                     </li>
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Acrylic</a>
-                    </li>
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Aluminium</a>
-                    </li>
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Cotton</a>
-                    </li>
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Leather</a>
-                    </li>
-                    <li class="mb-1">
-                      <a href="#"
-                                     class="text-secondary hover-primary border-bottom border-white border-hover-primary d-inline-block lh-12">Metal</a>
-                    </li>
+                    @endforeach
                   </ul>
                 </div>
               </div>
