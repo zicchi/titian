@@ -2,93 +2,30 @@
     <section class="overflow-hidden">
       <div class="slick-slider custom-slider-02"
        data-slick-options='{"slidesToShow": 1,"infinite":true,"autoplay":false,"dots":true,"arrows":false}'>
-        <div class="box">
-          <div class="d-flex flex-column bg-img-cover-center vh-100 justify-content-center custom-height-sm"
-               style="background-image: url('{{ asset('assets/images/bg-home-06.jpg')}}')">
-            <div class="d-flex flex-column h-100 justify-content-center">
-              <div class="container container-xxl">
-                <h1 class="mb-7 fs-40 fs-lg-56" data-animate="fadeInUp">Aura Mirror</h1>
-                <ul class="list-inline mb-5 pt-1" data-animate="fadeInUp">
-                  <li class="list-inline-item mr-6 mr-xl-16 mb-6">
-                    <p class="fs-11 text-primary text-uppercase letter-spacing-05 mb-1 lh-1 font-weight-500">origin</p>
-                    <p class="font-weight-bold text-primary mb-0">Sweden</p>
-                  </li>
-                  <li class="list-inline-item mr-6 mr-xl-16 mb-6">
-                    <p class="fs-11 text-primary text-uppercase letter-spacing-05 mb-1 lh-1 font-weight-500">material</p>
-                    <p class="font-weight-bold text-primary mb-0">Aluminum</p>
-                  </li>
-                  <li class="list-inline-item mr-6 mr-xl-16 mb-6">
-                    <p class="fs-11 text-primary text-uppercase letter-spacing-05 mb-1 lh-1 font-weight-500">designer</p>
-                    <p class="font-weight-bold text-primary mb-0">Industrial Facility</p>
-                  </li>
-                </ul>
-                <div>
-                  <a href="shop-page-02.html"
-                             class="btn btn-primary text-uppercase letter-spacing-05" data-animate="fadeInUp">Shop
-                    Now</a>
-                </div>
+        @foreach($sliders as $slider)
+              <div class="box">
+                  <div class="d-flex flex-column bg-img-cover-center vh-100 justify-content-center custom-height-sm"
+                       style="background-image: url('{{ \Illuminate\Support\Facades\Storage::url($slider->imageUrl)}}')">
+                      <div class="d-flex flex-column h-100 justify-content-center">
+                          <div class="container container-xxl">
+                              <h1 class="mb-7 fs-40 fs-lg-56" data-animate="fadeInUp">{{$slider->name}}</h1>
+                              <ul class="list-inline mb-5 pt-1" data-animate="fadeInUp">
+                                  <li class="list-inline-item mr-6 mr-xl-16 mb-6">
+                                      <p class="fs-11 text-primary text-uppercase letter-spacing-05 mb-1 lh-1 font-weight-500">material</p>
+                                      <p class="font-weight-bold text-primary mb-0">{{$slider->materials->pluck('name')->whenEmpty(function() { echo "-"; }, function($collection) { return $collection->join(', '); })}}</p>
+                                  </li>
+                              </ul>
+                              <div>
+                                  <a href="{{route('product.details',[$slider->slug])}}"
+                                     class="btn btn-primary text-uppercase letter-spacing-05" data-animate="fadeInUp">
+                                      Details
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="box">
-          <div class="d-flex flex-column bg-img-cover-center vh-100 justify-content-center custom-height-sm"
-               style="background-image: url('{{ asset('assets/images/bg-home-06.jpg')}}')">
-            <div class="d-flex flex-column h-100 justify-content-center">
-              <div class="container container-xxl">
-                <h2 class="mb-7 fs-40 fs-lg-56" data-animate="fadeInUp">Aura Mirror</h2>
-                <ul class="list-inline mb-5 pt-1" data-animate="fadeInUp">
-                  <li class="list-inline-item mr-6 mr-xl-16 mb-6">
-                    <p class="fs-11 text-primary text-uppercase letter-spacing-05 mb-1 lh-1 font-weight-500">origin</p>
-                    <p class="font-weight-bold text-primary mb-0">Sweden</p>
-                  </li>
-                  <li class="list-inline-item mr-6 mr-xl-16 mb-6">
-                    <p class="fs-11 text-primary text-uppercase letter-spacing-05 mb-1 lh-1 font-weight-500">material</p>
-                    <p class="font-weight-bold text-primary mb-0">Aluminum</p>
-                  </li>
-                  <li class="list-inline-item mr-6 mr-xl-16 mb-6">
-                    <p class="fs-11 text-primary text-uppercase letter-spacing-05 mb-1 lh-1 font-weight-500">designer</p>
-                    <p class="font-weight-bold text-primary mb-0">Industrial Facility</p>
-                  </li>
-                </ul>
-                <div>
-                  <a href="shop-page-02.html"
-                             class="btn btn-primary text-uppercase letter-spacing-05" data-animate="fadeInUp">Shop
-                    Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="box">
-          <div class="d-flex flex-column bg-img-cover-center vh-100 justify-content-center custom-height-sm"
-               style="background-image: url('{{ asset('assets/images/bg-home-06.jpg')}}')">
-            <div class="d-flex flex-column h-100 justify-content-center">
-              <div class="container container-xxl">
-                <h2 class="mb-7 fs-40 fs-lg-56" data-animate="fadeInUp">Aura Mirror</h2>
-                <ul class="list-inline mb-5 pt-1" data-animate="fadeInUp">
-                  <li class="list-inline-item mr-6 mr-xl-16 mb-6">
-                    <p class="fs-11 text-primary text-uppercase letter-spacing-05 mb-1 lh-1 font-weight-500">origin</p>
-                    <p class="font-weight-bold text-primary mb-0">Sweden</p>
-                  </li>
-                  <li class="list-inline-item mr-6 mr-xl-16 mb-6">
-                    <p class="fs-11 text-primary text-uppercase letter-spacing-05 mb-1 lh-1 font-weight-500">material</p>
-                    <p class="font-weight-bold text-primary mb-0">Aluminum</p>
-                  </li>
-                  <li class="list-inline-item mr-6 mr-xl-16 mb-6">
-                    <p class="fs-11 text-primary text-uppercase letter-spacing-05 mb-1 lh-1 font-weight-500">designer</p>
-                    <p class="font-weight-bold text-primary mb-0">Industrial Facility</p>
-                  </li>
-                </ul>
-                <div>
-                  <a href="shop-page-02.html"
-                             class="btn btn-primary text-uppercase letter-spacing-05" data-animate="fadeInUp">Shop
-                    Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+          @endforeach
       </div>
     </section>
     <section class="py-lg-15 py-11">
