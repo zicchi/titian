@@ -25,7 +25,9 @@ class AboutController extends Controller
         $abouts->jargon = $request->input('jargon');
         $abouts->description = $request->input('description');
         if ($request->hasFile('image')) {
-            $abouts->foto_header = $request->file('image')->store('public/storage/abouts');
+            $abouts->foto_header = $request->file('image')->store('asset/images/abouts',[
+                'disk' => 'upload',
+            ]);
         } else {
             $abouts->foto_header = "";
         }
@@ -49,7 +51,9 @@ class AboutController extends Controller
         $abouts->jargon = $request->input('jargon');
         $abouts->description = $request->input('description');
         if ($request->hasFile('image')) {
-            $abouts->foto_header = $request->file('image')->store('public/storage/abouts');
+            $abouts->foto_header = $request->file('image')->store('asset/images/abouts',[
+                'disk' => 'upload',
+            ]);
         } else {
             $abouts->foto_header = "";
         }

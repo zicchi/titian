@@ -32,7 +32,9 @@ class ClientController extends Controller
         $clients->pekerjaan = $request->input('pekerjaan');
         $clients->testimoni = $request->input('testimoni');
         if ($request->hasFile('image')) {
-            $clients->imageURL = $request->file('image')->store('public/storage/clients');
+            $clients->foto_header = $request->file('image')->store('asset/images/clients',[
+                'disk' => 'upload',
+            ]);
         } else {
             $clients->imageURL = "";
         }
@@ -54,7 +56,9 @@ class ClientController extends Controller
         $clients->pekerjaan = $request->input('pekerjaan');
         $clients->testimoni = $request->input('testimoni');
         if ($request->hasFile('image')) {
-            $clients->imageURL = $request->file('image')->store('public/storage/client');
+            $clients->foto_header = $request->file('image')->store('asset/images/clients',[
+                'disk' => 'upload',
+            ]);
         } else {
             $clients->imageURL = "";
         }

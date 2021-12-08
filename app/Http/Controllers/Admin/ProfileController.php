@@ -22,7 +22,9 @@ class ProfileController extends Controller
         $user->username = $request->input('username');
         $user->email = $request->input('email');
         if ($request->hasFile('image')) {
-            $user->imageUrl = $request->file('image')->store('public/images/user/'.$user->name);
+            $user->foto_header = $request->file('image')->store('asset/images/user/'.$user->name,[
+                'disk' => 'upload',
+            ]);
         } else {
             $user->imageUrl = "";
         }
