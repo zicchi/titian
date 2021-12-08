@@ -30,7 +30,9 @@ class ProductCategoryController extends Controller
         $category->name = $request->input('name');
         $category->slug = $request->input('slug');
         if ($request->hasFile('image')) {
-            $category->imageUrl = $request->file('image')->store('public/images/product_categories');
+            $category->imageUrl = $request->file('image')->store('asset/images/product_categories',[
+                'disk' => 'upload',
+            ]);
         } else {
             $category->imageUrl = "";
         }
@@ -51,7 +53,9 @@ class ProductCategoryController extends Controller
         $category->name = $request->input('name');
         $category->slug = $request->input('slug');
         if ($request->hasFile('image')) {
-            $category->imageUrl = $request->file('image')->store('public/images/product_categories');
+            $category->imageUrl = $request->file('image')->store('asset/images/product_categories',[
+                'disk' => 'upload',
+            ]);
         } else {
             $category->imageUrl = "";
         }
