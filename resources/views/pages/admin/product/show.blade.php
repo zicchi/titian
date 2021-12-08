@@ -33,7 +33,7 @@
                     <div class="card">
                         <div class="card-body">
                             @if($product->imageUrl)
-                                <img src="{{ \Illuminate\Support\Facades\Storage::url($product->imageUrl) }}" alt="" class="img-thumbnail" width="400px">
+                                <img src="{{ asset($product->imageUrl) }}" alt="" class="img-thumbnail" width="400px">
                             @else
                                 <dd>Gambar tidak tersedia</dd>
                             @endif

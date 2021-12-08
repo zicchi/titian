@@ -45,7 +45,9 @@ class BlogController extends Controller
         $blog->user_id = auth()->user()->id;
 
         if ($request->hasFile('image')) {
-            $blog->imageUrl = $request->file('image')->store('public/images/blog');
+            $blog->imageUrl = $request->file('image')->store('asset/images/blog',[
+                'disk' => 'upload',
+            ]);
         } else {
             $blog->imageUrl = "";
         }
@@ -72,7 +74,9 @@ class BlogController extends Controller
         $blog->blog_category_id = $request->input('category');
         $blog->user_id = auth()->user()->id;
         if ($request->hasFile('image')) {
-            $blog->imageUrl = $request->file('image')->store('public/images/blog');
+            $blog->imageUrl = $request->file('image')->store('asset/images/blog',[
+                'disk' => 'upload',
+            ]);
         } else {
             $blog->imageUrl = "";
         }

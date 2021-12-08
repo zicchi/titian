@@ -28,7 +28,7 @@
                     <div class="card">
                         <div class="card-body">
                             @if($blog->imageUrl)
-                                <img src="{{ \Illuminate\Support\Facades\Storage::url($blog->imageUrl) }}" alt="" class="img-thumbnail" width="400px">
+                                <img src="{{ asset($blog->imageUrl) }}" alt="" class="img-thumbnail" width="400px">
                             @else
                                 <dd>Gambar tidak tersedia</dd>
                             @endif
