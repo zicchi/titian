@@ -23,12 +23,14 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
+                                <th>Slug</th>
                                 <th>Action</th>
                             </tr>
                             @foreach($categories as $category)
                                 <tr>
                                     <td>{{$category->id}}</td>
                                     <td>{{$category->name}}</td>
+                                    <td>{{$category->slug}}</td>
                                     <td>
                                         <a href="{{route('admin::blog-category::edit',[$category])}}" class="btn btn-info">Update</a>
                                         <a href="javascript:" onclick="if(confirm('Anda yakin ingin menghapus item ini?')){$('#delete-item-{{$category->id}}').submit()};" class="btn btn-danger">Hapus</a>

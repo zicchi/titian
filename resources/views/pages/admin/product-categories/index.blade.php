@@ -34,7 +34,7 @@
                                     <td>{{$category->slug}}</td>
                                     <td>
                                         @if($category->imageURL)
-                                            <img src="{{ \Illuminate\Support\Facades\Storage::url($category->imageURL) }}" alt="" class="img-thumbnail" width="250px">
+                                            <img src="{{ asset($category->imageURL) }}" alt="" class="img-thumbnail" width="250px">
                                         @else
                                             <dd>Gambar tidak tersedia</dd>
                                         @endif

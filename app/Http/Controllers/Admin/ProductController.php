@@ -50,6 +50,7 @@ class ProductController extends Controller
         $product->slug = $request->input('slug');
         $product->name = $request->input('name');
         $product->price = $request->input('price');
+        $product->slider_status = $request->input('slider');
         $product->description = $request->input('description');
         if ($request->hasFile('image')) {
             $product->imageUrl = $request->file('image')->store('asset/images/product',[
@@ -99,6 +100,7 @@ class ProductController extends Controller
         $product->product_category_id = $request->input('category');
         $product->name = $request->input('name');
         $product->price = $request->input('price');
+        $product->slider_status = $request->input('slider');
         $product->description = $request->input('description');
         if ($request->hasFile('image')) {
             $product->imageUrl = $request->file('image')->store('asset/images/product',[

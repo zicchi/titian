@@ -42,10 +42,6 @@
                             <input type="text" class="form-control" name="subjudul" required="" value="{{$abouts->subjudul}}">
                         </div>
                         <div class="form-group">
-                            <label>Jargon</label>
-                            <input type="text" class="form-control" name="jargon" required="" value="{{$abouts->jargon}}">
-                        </div>
-                        <div class="form-group">
                             <label>Description</label>
                             <input type="text" class="form-control" name="description" required="" value="{{$abouts->description}}">
                         </div>
@@ -53,7 +49,7 @@
                             <label for="name">Gambar</label>
                             @if($abouts->foto_header)
                                 <div class="my-2">
-                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($abouts->foto_header) }}"
+                                    <img src="{{ asset($abouts->foto_header) }}"
                                          alt="Gambar {{ $abouts->judul }}" class="image-preview">
                                 </div>
                             @endif

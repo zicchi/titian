@@ -33,6 +33,10 @@
                             <label>Nama Kategori Blog</label>
                             <input type="text" class="form-control" name="name" required="" value="{{$category->name}}">
                         </div>
+                        <div class="form-group">
+                            <label>Nama Slug</label>
+                            <input type="text" class="form-control" name="slug" required="" value="{{$category->slug}}">
+                        </div>
                     </div>
                     <div class="card-footer text-right">
                         <button class="btn btn-primary">Submit</button>

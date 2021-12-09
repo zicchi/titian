@@ -11,7 +11,7 @@
                @foreach ($categories as $category)
               <div class="box" data-animate="fadeInUp">
                 <div class="card border-0">
-                  <img src="{{ \Illuminate\Support\Facades\Storage::url( $category->imageURL ) }}" alt="Chairs" class="card-img">
+                  <img src="{{ asset( $category->imageURL ) }}" alt="Chairs" class="card-img">
                   <div class="card-img-overlay d-inline-flex flex-column px-6 py-4">
                       <h3 class="card-title fs-30">{{$category->name}}</h3>
                     <div class="mt-auto">
@@ -83,7 +83,7 @@
               <div class="col-sm-6 col-lg-4 mb-8" data-animate="fadeInUp">
                 <div class="card border-0 hover-change-content product">
                   <div class="card-img-top position-relative">
-                    <div style="background-image: url(' {{ \Illuminate\Support\Facades\Storage::url($product->imageUrl) }} ')"
+                    <div style="background-image: url(' {{ asset($product->imageUrl) }} ')"
                                    class="card-img ratio bg-img-cover-center ratio-1-1">
                     </div>
                   </div>

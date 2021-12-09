@@ -6,7 +6,7 @@
     <meta name="description" content="Furniture Shop Html Template">
     <meta name="author" content="">
     <meta name="generator" content="Jekyll">
-    <title>Home 06 - Furnitor</title>
+    <title>Titiancorp</title>
     <!-- Vendors CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/vendors/fontawesome-pro-5/css/all.css')}}">
@@ -32,21 +32,21 @@
             <nav class="navbar navbar-expand-xl px-0 py-2 py-xl-0 row no-gutters">
               <div class="col-xl-3"><a class="navbar-brand mr-0"
                                              href="{{ asset('assets/index.html')}}">
-                  <img src="{{ asset('assets/images/logo.png') }}" alt="Furnitor">
+                  <img src="{{ asset('asset/images/logo.png') }}" alt="Furnitor">
                 </a></div>
               <div class="col-xl-6 d-flex justify-content-center position-static">
                 <ul class="navbar-nav hover-menu main-menu px-0 mx-xl-n4">
                   <li class="nav-item  py-2 py-xl-5 px-0 px-xl-4">
                     <a class="nav-link p-0" href="/">Home</a>
                   </li>
-                  <li class="nav-item py-2 py-xl-5 px-0 px-xl-4">
-                    <a class="nav-link p-0" href="/shop">
-                      Shop
-                    </a>
-                  </li>
                   <li class="nav-item dropdown-item-pages py-2 py-xl-5 px-0 px-xl-4">
                     <a class="nav-link p-0" href="/about">
                       About Us
+                    </a>
+                  </li>
+                  <li class="nav-item py-2 py-xl-5 px-0 px-xl-4">
+                    <a class="nav-link p-0"href="/shop">
+                      Shop
                     </a>
                   </li>
                   <li class="nav-item py-2 py-xl-5 px-0 px-xl-4">
@@ -70,14 +70,6 @@
                     </a>
                   </li>
                 </ul>
-              </div>
-              <div class="col-xl-3 position-relative">
-                <div class="d-flex align-items-center justify-content-end">
-                  <a href="#search-popup" data-gtf-mfp="true"
-                               data-mfp-options='{"type":"inline","focus": "#keyword","mainClass": "mfp-search-form mfp-move-from-top mfp-align-top"}'
-                               class="nav-search d-block py-0 pr-2'" title="Search"><i
-                                    class="far fa-search"></i> Search</a>
-                </div>
               </div>
             </nav>
           </div>
@@ -104,6 +96,12 @@
     <footer class="pt-13 pb-4 footer">
       <div class="container container-xxl">
         <div class="row">
+            <div class="col-md-6 col-lg-3 mb-6 mb-lg-0">
+                <h3 class="fs-14 mb-3 text-uppercase letter-spacing-05">Titian</h3>
+                <ul class="list-unstyled mb-0">
+                  <li class="py-0"><a href="#" class="text-gray hover-primary lh-2 font-weight-500"></a> </li>
+                </ul>
+              </div>
           <div class="col-md-6 col-lg-3 mb-6 mb-lg-0">
             <h3 class="fs-14 mb-3 text-uppercase letter-spacing-05">menu</h3>
             <ul class="list-unstyled mb-0">
@@ -119,7 +117,7 @@
               <li class="py-0"><a href="/contact" class="text-gray hover-primary lh-2 font-weight-500">Contact Us</a> </li>
             </ul>
           </div>
-          <div class="col-md-6 col-lg-6 mb-0 mb-lg-12">
+          <div class="col-md-6 col-lg-3 mb-0 mb-lg-0">
             <h3 class="fs-14 mb-3 text-uppercase letter-spacing-05">follow us</h3>
             <ul class="list-unstyled mb-0">
               <li class="py-0"><a href="{{ asset('assets/#') }}" class="text-gray hover-primary lh-2 font-weight-500">Facebook</a> </li>
@@ -131,7 +129,7 @@
         </div>
         <div class="mt-2 mt-md-7 row align-items-center">
           <p class="col-md-auto mb-4 mb-md-0 text-gray lh-1 fs-14 font-weight-500">
-            © 2021 Furnitor. All rights reserved.
+            © 2021 Titiancorp. All rights reserved.
           </p>
         </div>
       </div>
@@ -507,85 +505,8 @@
                 <li class="dropdown-item">
                   <a
                    class="dropdown-link"
-                   href="{{ asset('assets/home-01.html')}}" >
-                    Home 01
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="{{ asset('assets/home-02.html')}}" >
-                    Home 02
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="{{ asset('assets/home-03.html')}}" >
-                    Home 03
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="{{ asset('assets/home-04.html')}}" >
-                    Home 04
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="{{ asset('assets/home-05.html')}}" >
-                    Home 05
-                  </a>
-                </li>
-                <li class="dropdown-item active">
-                  <a
-                   class="dropdown-link"
-                   href="{{ asset('assets/home-06.html')}}" >
-                    Home 06
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="{{ asset('assets/home-07.html')}}" >
-                    Home 07
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="{{ asset('assets/home-08.html')}}" >
-                    Home 08
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="{{ asset('assets/home-09.html')}}" >
-                    Home 09
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="{{ asset('assets/home-10.html')}}" >
-                    Home 10
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="{{ asset('assets/home-11.html')}}" >
-                    Home 11
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="{{ asset('assets/home-12.html')}}" >
-                    Home 12
+                   href="/" >
+                    Home
                   </a>
                 </li>
               </ul>
@@ -593,7 +514,7 @@
             <li aria-haspopup="true" aria-expanded="false"
         class="nav-item dropdown py-1 px-0">
               <a class="nav-link dropdown-toggle p-0"
-           href="{{ asset('assets/store.html')}}" data-toggle="dropdown" >
+           href="/shop" data-toggle="dropdown" >
                 Shop
                 <span class="caret"></span>
               </a>
@@ -602,162 +523,9 @@
                 <h4 class="dropdown-header text-dark fs-16 my-3">
                   Shop Pages
                 </h4>
-                <!-- List -->
                 <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/shop-page-01.html')}}">
-                    Shop Layout <sup>V1</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/shop-page-02.html')}}">
-                    Shop Layout <sup>V2</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/shop-page-03.html')}}">
-                    Shop Layout <sup>V3</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/shop-page-04.html')}}">
-                    Shop Layout <sup>V4</sup>
-                  </a>
-                </div>
-                <!-- List -->
-                <div class="dropdown-item">
-                  <a class="dropdown-link"
-           href="{{ asset('assets/shop-page-05.html')}}">
-                    Shop Layout <sup>V5</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link"
-           href="{{ asset('assets/shop-page-06.html')}}">
-                    Shop Layout <sup>V6</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/shop-page-07.html')}}">
-                    Shop Layout <sup>V7</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/shop-page-08.html')}}">
-                    Shop Layout <sup>V8</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/shop-page-09.html')}}">
-                    Shop Layout <sup>V9</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/shop-page-10.html')}}">
-                    Shop Layout <sup>V10</sup>
-                  </a>
-                </div>
-                <!-- Heading -->
-                <h4 class="dropdown-header text-dark fs-16 my-3">
-                  Product Page
-                </h4>
-                <!-- List -->
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/product-page-01.html')}}">
-                    Product Layout <sup>V1</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/product-page-02.html')}}">
-                    Product Layout <sup>V2</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/product-page-03.html')}}">
-                    Product Layout <sup>V3</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/product-page-04.html')}}">
-                    Product Layout <sup>V4</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/product-page-05.html')}}">
-                    Product Layout <sup>V5</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/product-page-06.html')}}">
-                    Product Layout <sup>V6</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/product-page-07.html')}}">
-                    Product Layout <sup>V7</sup>
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/product-page-08.html')}}">
-                    Product Layout <sup>V8</sup>
-                  </a>
-                </div>
-                <!-- Heading -->
-                <h4 class="dropdown-header text-dark fs-16 my-3">
-                  Product Type
-                </h4>
-                <!-- List -->
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/product-page-03.html')}}">
-                    Product Simple
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/product-page-05.html')}}">
-                    Product Variable (Color/Size/etc.)
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/product-page-07.html')}}">
-                    Product Time Limit
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/product-page-06.html')}}">
-                    Product Grouped
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/product-page-09.html')}}">
-                    Product External / Affiliate
-                  </a>
-                </div>
-                <h4 class="dropdown-header text-dark fs-16 my-3">
-                  Shop Page
-                </h4>
-                <!-- List -->
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/cart.html')}}">
-                    Cart
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/compare.html')}}">
-                    Compare
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/stores') }}">
-                    Store
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/wishlist.html')}}">
-                    Wishlist
-                  </a>
-                </div>
-                <div class="dropdown-item">
-                  <a class="dropdown-link" href="{{ asset('assets/checkout.html')}}">
-                    Checkout
+                  <a class="dropdown-link" href="/shop">
+                    Shop
                   </a>
                 </div>
               </div>
@@ -773,36 +541,22 @@
                 <li class="dropdown-item">
                   <a
                    class="dropdown-link"
-                   href="{{ asset('assets/about-us-01.html')}}" >
-                    About Us 01
+                   href="/about" >
+                    About Us
                   </a>
                 </li>
                 <li class="dropdown-item">
                   <a
                    class="dropdown-link"
-                   href="{{ asset('assets/about-us-02.html')}}" >
-                    About Us 02
+                   href="/gallery" >
+                    Gallery
                   </a>
                 </li>
                 <li class="dropdown-item">
                   <a
                    class="dropdown-link"
-                   href="{{ asset('assets/faqs.html')}}" >
+                   href="/faq" >
                     FAQs
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="{{ asset('assets/service.html')}}" >
-                    Service
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="{{ asset('assets/login-register.html')}}" >
-                    Login Register
                   </a>
                 </li>
               </ul>
@@ -818,15 +572,8 @@
                 <li class="dropdown-item">
                   <a
                    class="dropdown-link"
-                   href="{{ asset('assets/contact-01.html')}}" >
-                    Contact 01
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="{{ asset('assets/contact-02.html')}}" >
-                    Contact 02
+                   href="/contact" >
+                    Contact
                   </a>
                 </li>
               </ul>
@@ -842,115 +589,13 @@
                 <li class="dropdown-item">
                   <a
                    class="dropdown-link"
-                   href="blog-layout-01.html" >
-                    Blog Layout 01
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="blog-layout-02.html" >
-                    Blog Layout 02
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="blog-layout-03.html" >
-                    Blog Layout 03
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="blog-layout-04.html" >
-                    Blog Layout 04
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="blog-post-01.html" >
-                    Blog Post 01
-                  </a>
-                </li>
-                <li class="dropdown-item">
-                  <a
-                   class="dropdown-link"
-                   href="blog-post-02.html" >
-                    Blog Post 02
+                   href="/blog" >
+                    Blog
                   </a>
                 </li>
               </ul>
             </li>
-            <li aria-haspopup="true" aria-expanded="false"
-        class="nav-item dropdown py-1 px-0">
-              <a class="nav-link dropdown-toggle p-0"
-           href="#" data-toggle="dropdown" >
-                Docs
-                <span class="caret"></span>
-              </a>
-              <div class="dropdown-menu px-0 pt-3 dropdown-menu-docs x-animated x-fadeInUp">
-                <div class="dropdown-body">
-                  <a class="dropdown-item py-1"
-           href="docs/getting-started/dev-environment-setup.html">
-                    <div class="media">
-                      <div class="fs-20 mr-3">
-                        <i class="fal fa-file-alt"></i>
-                      </div>
-                      <div class="media-body">
-                        <span class="d-block lh-15">Documentation</span>
-                        <small class="d-block">Kick-start customization</small>
-                      </div>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider m-0"></div>
-                  <a class="dropdown-item py-1"
-           href="docs/content/typography.html">
-                    <div class="media">
-                      <div class="fs-20 mr-3">
-                        <i class="fal fa-layer-group"></i>
-                      </div>
-                      <div class="media-body">
-                        <span class="d-block lh-15">UI Kit<span
-                            class="badge badge-danger ml-2">50+</span></span>
-                        <small class="d-block">Flexible components</small>
-                      </div>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider m-0"></div>
-                  <a class="dropdown-item py-1"
-           href="docs/getting-started/changelog.html">
-                    <div class="media">
-                      <div class="fs-20 mr-3">
-                        <i class="fal fa-edit"></i>
-                      </div>
-                      <div class="media-body">
-                        <span class="d-block lh-15">Changelog<span
-                            class="badge badge-success ml-2">v1.1.0</span></span>
-                        <small class="d-block">Regular updates</small>
-                      </div>
-                    </div>
-                  </a>
-                  <div class="dropdown-divider m-0"></div>
-                  <a class="dropdown-item py-1"
-           href="https://sp.g5plus.net/" target="_blank">
-                    <div class="media">
-                      <div class="fs-20 mr-3">
-                        <i class="fal fa-life-ring"></i>
-                      </div>
-                      <div class="media-body">
-                        <span class="d-block lh-15">Support</span>
-                        <small class="d-block">https://sp.g5plus.net/</small>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="card-footer bg-transparent border-0 mt-auto pl-8 pr-7 pb-0 pt-4">
+        <div class="card-footer bg-transparent border-0 mt-12 pl-8 pr-7 pb-0 pt-4">
           <ul class="list-inline d-flex align-items-center mb-3">
             <li class="list-inline-item mr-4"><a href="#" class="fs-20 lh-1"><i class="fab fa-pinterest-p"></i></a>
             </li>

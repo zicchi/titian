@@ -30,7 +30,7 @@
                             <input type="text" class="form-control" name="title" required="" value="{{$blog->title}}">
                         </div>
                         <div class="form-group">
-                            <label>Title</label>
+                            <label>Slug</label>
                             <input type="text" class="form-control" name="slug" required="" value="{{$blog->slug}}">
                         </div>
                         <div class="form-group">

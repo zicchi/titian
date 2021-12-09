@@ -57,11 +57,18 @@
                             <label for="name">Gambar</label>
                             @if($product->imageUrl)
                                 <div class="my-2">
-                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($product->imageUrl) }}"
+                                    <img src="{{ asset($product->imageUrl) }}"
                                          alt="Gambar {{ $product->name }}" class="image-preview">
                                 </div>
                             @endif
                             <input type="file" name="image" dusk="image" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="slider">Slider Status</label>
+                            <select name="slider" id="slider" class="form-control">
+                                    <option value="0">Tidak Aktif</option>
+                                    <option value="1">Aktif</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <div class="row">

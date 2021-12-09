@@ -1,6 +1,6 @@
 <main id="content">
     <section class="d-flex flex-column bg-img-cover-center vh-100 pt-xxl-13 custom-height-sm"
-       style="background-image: url('{{ \Illuminate\Support\Facades\Storage::url( $abouts[0]->foto_header ) }}">
+       style="background-image: url('{{ asset($abouts[0]->foto_header)  }}">
       <div class="d-flex flex-column h-100 justify-content-center">
         <div class="container container-xxl">
           <h1 class="fs-60 mb-4">About Us</h1>

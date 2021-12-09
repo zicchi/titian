@@ -9,7 +9,7 @@
           <div class="col-sm-6 col-lg-4 mb-8" data-animate="fadeInUp">
             <div class="card border-0">
               <a href="{{ route('blog.details', ['slug'=>$blog->slug]) }}" class="hover-shine card-img-top">
-                <img src="{{ asset('assets/images/blog_01.jpg') }}"
+                <img src="{{ asset($blog->imageUrl) }}"
                            alt="{{ $blog->title }}">
               </a>
               <div class="card-body px-0 pt-6 pb-0">

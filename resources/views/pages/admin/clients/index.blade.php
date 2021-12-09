@@ -36,7 +36,7 @@
                                     <td>{{$client->testimoni}}</td>
                                     <td>
                                             @if($client->imageURL)
-                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($client->imageURL) }}" alt="" class="img-thumbnail" width="200px">
+                                                <img src="{{ asset($client->imageURL) }}" alt="" class="img-thumbnail" width="200px">
                                             @else
                                                 <dd>Gambar tidak tersedia</dd>
                                             @endif

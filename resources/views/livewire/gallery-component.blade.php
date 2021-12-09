@@ -8,7 +8,7 @@
           <div class="col-sm-6 col-lg-4 mb-8" data-animate="fadeInUp">
             <div class="card border-0">
               <a href="#" class="hover-shine card-img-top">
-                <img src=" {{ \Illuminate\Support\Facades\Storage::url( $gallery->imageURL ) }}"
+                <img src=" {{ asset($gallery->imageURL) }}"
                            alt="Under the sun in Cape Town">
               </a>
               <div class="card-body px-0 pt-6 pb-0">

@@ -45,7 +45,7 @@
                             <label for="name">Gambar</label>
                             @if($clients->imageURL)
                                 <div class="my-2">
-                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($clients->imageURL) }}"
+                                    <img src="{{ asset($clients->imageURL) }}"
                                          alt="Gambar {{ $clients->name }}" class="image-preview">
                                 </div>
                             @endif

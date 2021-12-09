@@ -22,7 +22,6 @@
                                 <th>Header Subtitle</th>
                                 <th>Judul</th>
                                 <th>Sub Judul</th>
-                                <th>Jargon</th>
                                 <th>Description</th>
                                 <th>Header Foto</th>
                                 <th>Aksi</th>
@@ -33,11 +32,10 @@
                                     <td>{{$about->header_subtitle}}</td>
                                     <td>{{$about->judul}}</td>
                                     <td>{{$about->subjudul}}</td>
-                                    <td>{{$about->jargon}}</td>
                                     <td>{{$about->description}}</td>
                                     <td>
                                             @if($about->foto_header)
-                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($about->foto_header) }}" alt="" class="img-thumbnail" width="400px">
+                                                <img src="{{ asset($about->foto_header) }}" alt="{{ $about->header_subtitle }}" class="img-thumbnail" width="400px">
                                             @else
                                                 <dd>Gambar tidak tersedia</dd>
                                             @endif

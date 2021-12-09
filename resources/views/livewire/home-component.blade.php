@@ -5,7 +5,7 @@
         @foreach($sliders as $slider)
               <div class="box">
                   <div class="d-flex flex-column bg-img-cover-center vh-100 justify-content-center custom-height-sm"
-                       style="background-image: url('{{ \Illuminate\Support\Facades\Storage::url($slider->imageUrl)}}')">
+                       style="background-image: url('{{ asset($slider->imageUrl)}}')">
                       <div class="d-flex flex-column h-100 justify-content-center">
                           <div class="container container-xxl">
                               <h1 class="mb-7 fs-40 fs-lg-56" data-animate="fadeInUp">{{$slider->name}}</h1>
@@ -35,7 +35,7 @@
           @foreach ($products as $product)
           <div class="col-sm-6 col-lg-3 mb-6" data-animate="fadeInUp">
             <div class="card border-0 hover-change-content product">
-              <div style="background-image: url('{{ \Illuminate\Support\Facades\Storage::url($product->imageUrl) }} ')"
+              <div style="background-image: url('{{ asset($product->imageUrl) }} ')"
                        class="card-img ratio bg-img-cover-center ratio-1-1">
               </div>
               <div class="card-img-overlay d-flex py-4 py-sm-5 pl-6 pr-4">
@@ -66,7 +66,7 @@
             <div class="card border-0">
               <div class="card-body px-3 py-0 text-center">
                 <div class="mxw-120px mb-6 mx-auto">
-                  <img src="{{ \Illuminate\Support\Facades\Storage::url( $client->imageURL ) }}" alt="{{ $client->nama }}">
+                  <img src="{{ asset( $client->imageURL ) }}" alt="{{ $client->nama }}">
                 </div>
                 <p class="card-text mb-4 font-weight-500">
                   “{{ $client->testimoni }}“

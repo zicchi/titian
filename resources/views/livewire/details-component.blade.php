@@ -10,11 +10,11 @@
                        data-slick-options='{"slidesToShow": 1, "autoplay":false,"dots":false,"arrows":false,"asNavFor": ".slider-nav"}'>
                 <div class="box">
                   <div class="card p-0 hover-change-image rounded-0 border-0">
-                    <a href="{{ \Illuminate\Support\Facades\Storage::url( $product->imageUrl ) }}"
+                    <a href="{{ asset( $product->imageUrl ) }}"
                                  class="card-img ratio ratio-1-1 bg-img-cover-center"
                                  data-gtf-mfp="true"
                                  data-gallery-id="02"
-                                 style="background-image:url('{{ \Illuminate\Support\Facades\Storage::url( $product->imageUrl ) }}')">
+                                 style="background-image:url('{{ asset( $product->imageUrl ) }}')">
                     </a>
                   </div>
                 </div>

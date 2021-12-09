@@ -18,7 +18,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
-                            <dt>ID Produk</dt>
+                            <dt>ID Blog</dt>
                             <dd>#{{$blog->id}}</dd>
 
                         </div>

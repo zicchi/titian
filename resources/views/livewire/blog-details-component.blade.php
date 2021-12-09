@@ -13,7 +13,7 @@
         <div class="row">
           <div class="col-lg-9">
             <section class="border-bottom pb-8">
-              <img src="{{ asset('assets/images/post-03.jpg') }}" alt="Post 01" class="mb-8">
+              <img src="{{ asset($blogs->imageUrl) }}" alt="Post 01" class="mb-8">
                 {!! $blogs->description !!}
               <div class="row no-gutters">
                 <div class="col-sm-12 d-flex justify-content-sm-end">

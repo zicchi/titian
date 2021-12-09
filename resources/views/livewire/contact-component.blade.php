@@ -44,7 +44,7 @@
             <div class="row">
 
       <div class="container container-xxl">
-        <iframe src="{{ $contacts[0]->maps }}" width="100%" height="400px" style="border:0;" allowfullscreen="true" loading="lazy"></iframe>
+        <iframe src="{{ $contacts[0]->maps }}" width="100%" height="800px" style="border:0;" allowfullscreen="true" loading="lazy"></iframe>
             </div>
         </div>
     </section>

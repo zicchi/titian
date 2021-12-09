@@ -32,7 +32,7 @@
                                     <td>{{$gallery->judul}}</td>
                                     <td>
                                             @if($gallery->imageURL)
-                                                <img src="{{ \Illuminate\Support\Facades\Storage::url($gallery->imageURL) }}" alt="" class="img-thumbnail" width="400px">
+                                                <img src="{{ asset($gallery->imageURL) }}" alt="" class="img-thumbnail" width="400px">
                                             @else
                                                 <dd>Gambar tidak tersedia</dd>
                                             @endif

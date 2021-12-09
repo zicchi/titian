@@ -29,7 +29,9 @@ class GalleryController extends Controller
         $galleries = new Gallery();
         $galleries->judul = $request->input('judul');
         if ($request->hasFile('image')) {
-            $galleries->imageUrl = $request->file('image')->store('public/storage/galleries');
+            $galleries->imageUrl = $request->file('image')->store('asset/images/gallery',[
+                'disk' => 'upload',
+            ]);
         } else {
             $galleries->imageUrl = "";
         }
@@ -49,7 +51,9 @@ class GalleryController extends Controller
     {
         $galleries->judul = $request->input('judul');
         if ($request->hasFile('image')) {
-            $galleries->imageUrl = $request->file('image')->store('public/storage/gallery');
+            $galleries->imageUrl = $request->file('image')->store('asset/images/gallery',[
+                'disk' => 'upload',
+            ]);
         } else {
             $galleries->imageUrl = "";
         }

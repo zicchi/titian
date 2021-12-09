@@ -39,9 +39,9 @@
                         </div>
                         <div class="form-group">
                             <label for="name">Gambar</label>
-                            @if($category->imageUrl)
+                            @if($category->imageURL)
                                 <div class="my-2">
-                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($category->imageUrl) }}"
+                                    <img src="{{ asset($category->imageURL) }}"
                                          alt="Gambar {{ $category->title }}" class="image-preview" width="400px" height="500px">
                                 </div>
                             @endif

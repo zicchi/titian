@@ -11,7 +11,7 @@
            @foreach ($categories as $category)
           <div class="box" data-animate="fadeInUp">
             <div class="card border-0">
-              <img src="{{ \Illuminate\Support\Facades\Storage::url( $category->imageURL ) }}" alt="Chairs" class="card-img">
+              <img src="{{ asset( $category->imageURL ) }}" alt="Chairs" class="card-img">
               <div class="card-img-overlay d-inline-flex flex-column px-6 py-4">
                   <h3 class="card-title fs-30">{{$category->name}}</h3>
                 <div class="mt-auto">
@@ -129,11 +129,11 @@
                     <a class="dropdown-item text-primary fs-14" href="#">Price low to high</a>
                     <a class="dropdown-item text-primary fs-14" href="#">Random</a>
                   </div> --}}
-                  <select name="orderby" id="sorting" wire:model="sorting">
+                  {{-- <select name="orderby" id="sorting" wire:model="sorting">
                       <option value="default" class="dropdown-item text-primary fs-14" >Default Sorting</option>
                       <option value="lowToHigh" class="dropdown-item text-primary fs-14" >Price low to high</option>
                       <option value="highToLow" class="dropdown-item text-primary fs-14" >Price high to low</option>
-                  </select>
+                  </select> --}}
                 </div>
               </div>
             </div>
@@ -143,7 +143,7 @@
               <div class="col-sm-6 col-lg-4 mb-8" data-animate="fadeInUp">
                 <div class="card border-0 hover-change-content product">
                   <div class="card-img-top position-relative">
-                    <div style="background-image: url('{{ \Illuminate\Support\Facades\Storage::url($product->imageUrl) }} ')"
+                    <div style="background-image: url('{{ asset($product->imageUrl) }}')"
                                    class="card-img ratio bg-img-cover-center ratio-1-1">
                     </div>
                   </div>

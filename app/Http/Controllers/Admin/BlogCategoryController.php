@@ -28,6 +28,7 @@ class BlogCategoryController extends Controller
     {
         $category = new BlogCategory();
         $category->name = $request->input('name');
+        $category->slug = $request->input('slug');
         $category->save();
 
         return redirect(route('admin::blog-category::index'));
@@ -43,6 +44,7 @@ class BlogCategoryController extends Controller
     public function update(Request $request,BlogCategory $category)
     {
         $category->name = $request->input('name');
+        $category->slug = $request->input('slug');
         $category->save();
 
         return redirect(route('admin::blog-category::index'));
